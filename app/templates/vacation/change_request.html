@@ -6,9 +6,9 @@
 .change-request-wrapper { min-height: calc(100vh - 170px); display: flex; flex-direction: column; }
 .change-request-card { flex: 1 1 auto; display: flex; flex-direction: column; }
 .change-request-card .card-body { display: flex; flex-direction: column; height: 100%; }
-.change-request-card .form-content { flex: 1; display: flex; flex-direction: column; }
+.change-request-card .form-content { flex: 1; display: flex; flex-direction: column; padding-bottom: 1rem; }
 .change-request-card .form-actions { margin-top: auto; }
-.change-request-card .form-row { flex: 1; }
+.change-request-card .form-row { flex: none; }
 .change-request-card textarea.form-control { min-height: 260px; }
 </style>
 {% endblock %}
@@ -56,10 +56,10 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <div class="row mb-4 flex-grow-1 form-row">
-                        <div class="col-12 h-100">
+                    <div class="row mb-4 form-row">
+                        <div class="col-12">
                             <label class="form-label">{{ form.change_reason.label.text }}</label>
-                            {{ form.change_reason(class="form-control h-100" + (" is-invalid" if form.change_reason.errors else ""), rows=8, placeholder=_("Explain why you need to change the dates...")) }}
+                            {{ form.change_reason(class="form-control" + (" is-invalid" if form.change_reason.errors else ""), rows=8, placeholder=_("Explain why you need to change the dates...")) }}
                             {% for error in form.change_reason.errors %}
                             <div class="invalid-feedback">{{ error }}</div>
                             {% endfor %}
