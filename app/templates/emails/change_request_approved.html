@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family:Arial,sans-serif;padding:20px;">
+    <h2 style="color:#198754;">{{ _('Change Request Approved') }}</h2>
+    <p>{{ _('Hello %(name)s,', name=user.display_name or user.username) }}</p>
+    <p>{{ _('Your request to change your vacation dates has been approved.') }}</p>
+    <table style="border-collapse:collapse;margin:15px 0;">
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('From:') }}</td><td style="padding:5px 10px;">{{ request.start_date.strftime('%d/%m/%Y') }}</td></tr>
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('To:') }}</td><td style="padding:5px 10px;">{{ request.end_date.strftime('%d/%m/%Y') }}</td></tr>
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('Days:') }}</td><td style="padding:5px 10px;">{{ request.days_count }}</td></tr>
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('Approved by:') }}</td><td style="padding:5px 10px;">{{ approved_by.display_name or approved_by.username }}</td></tr>
+    </table>
+    <p>{{ _('You can review your vacation details in the system.') }}</p>
+</body>
+</html>

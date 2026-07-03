@@ -111,7 +111,7 @@ def change_response(req_id):
     if action not in ('approved', 'rejected'):
         flash(_('Invalid action.'), 'danger')
         return redirect(url_for('manager.dashboard'))
-    from app.services.notification_service import send_notification
+    from app.services.notification_service import send_notification, send_email_notification, _with_locale
     if action == 'approved':
         req.start_date = req.change_requested_start
         req.end_date = req.change_requested_end
@@ -124,15 +124,27 @@ def change_response(req_id):
         req.approved_at = db.func.now()
         db.session.commit()
         log_audit('approve_vacation_change', f'Approved change for vacation #{req.id}')
+        notification_message = _('%(name)s changed your vacation from %(orig_start)s to %(orig_end)s.',
+                                 name=req.user.display_name or req.user.username,
+                                 orig_start=req.start_date.strftime('%d/%m/%Y'),
+                                 orig_end=req.end_date.strftime('%d/%m/%Y'))
         send_notification(
             req.user_id,
             _('Change Request Approved'),
-            _('Your request to change your vacation from %(orig_start)s to %(orig_end)s has been approved.',
-              orig_start=req.start_date.strftime('%d/%m/%Y'),
-              orig_end=req.end_date.strftime('%d/%m/%Y')),
+            notification_message,
             'success',
             link='/vacation/my-vacations'
         )
+        if req.user.email:
+            def _send_email():
+                subject = _('Change Request Approved')
+                body_html = render_template('emails/change_request_approved.html', request=req, approved_by=current_user, user=req.user)
+                body_text = _('%(name)s approved your request to change your vacation from %(orig_start)s to %(orig_end)s.',
+                              name=current_user.display_name or current_user.username,
+                              orig_start=req.start_date.strftime('%d/%m/%Y'),
+                              orig_end=req.end_date.strftime('%d/%m/%Y'))
+                send_email_notification(req.user.email, subject, body_html, body_text)
+            _with_locale(_send_email, req.user.email_locale if getattr(req.user, 'email_locale', None) else None)
         flash(_('Change request approved and vacation dates updated.'), 'success')
     else:
         req.change_requested_start = None
@@ -141,13 +153,21 @@ def change_response(req_id):
         req.change_status = 'rejected'
         db.session.commit()
         log_audit('reject_vacation_change', f'Rejected change for vacation #{req.id}')
+        notification_message = _('Your request to change your vacation dates has been rejected.')
         send_notification(
             req.user_id,
             _('Change Request Rejected'),
-            _('Your request to change your vacation dates has been rejected.'),
+            notification_message,
             'danger',
             link='/vacation/my-vacations'
         )
+        if req.user.email:
+            def _send_email():
+                subject = _('Change Request Rejected')
+                body_html = render_template('emails/change_request_rejected.html', request=req, rejected_by=current_user, user=req.user)
+                body_text = _('Your request to change your vacation dates has been rejected.')
+                send_email_notification(req.user.email, subject, body_html, body_text)
+            _with_locale(_send_email, req.user.email_locale if getattr(req.user, 'email_locale', None) else None)
         flash(_('Change request rejected.'), 'success')
     return redirect(url_for('manager.dashboard'))
 
