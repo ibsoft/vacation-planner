@@ -71,7 +71,7 @@ def approve_request(req_id):
     if req.user_id not in sub_ids and not current_user.is_hr and not current_user.is_admin:
         flash(_('You are not authorized to approve this request.'), 'danger')
         return redirect(url_for('manager.dashboard'))
-    if req.status != 'pending':
+    if req.status != 'pending' and req.change_status != 'pending':
         flash(_('This request has already been processed.'), 'warning')
         return redirect(url_for('manager.dashboard'))
     form = ApprovalForm()
