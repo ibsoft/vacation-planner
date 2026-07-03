@@ -22,8 +22,8 @@ def dashboard():
         'pending_all': VacationRequest.query.filter_by(status='pending').count(),
         'approved_this_month': VacationRequest.query.filter(
             VacationRequest.status.in_(['approved', 'hr_assigned']),
-            db.extract('month', VacationRequest.created_at) == db.func.strftime('%m', db.func.now()),
-            db.extract('year', VacationRequest.created_at) == db.func.strftime('%Y', db.func.now()),
+            db.extract('month', VacationRequest.created_at) == db.extract('month', db.func.now()),
+            db.extract('year', VacationRequest.created_at) == db.extract('year', db.func.now()),
         ).count(),
     }
     recent_requests = VacationRequest.query.order_by(VacationRequest.created_at.desc()).limit(10).all()
