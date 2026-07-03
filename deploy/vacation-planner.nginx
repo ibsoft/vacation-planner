@@ -1,5 +1,5 @@
 upstream vacation-planner {
-    server unix:/run/vacation-planner/vacation-planner.sock fail_timeout=0;
+    server 127.0.0.1:9876 fail_timeout=0;
 }
 
 server {
