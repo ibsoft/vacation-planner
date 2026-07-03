@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, request
+from flask import Blueprint, render_template, redirect, url_for, flash, request, send_file
 from flask_login import login_required, current_user
 from flask_babel import gettext as _
 from app.extensions import db
@@ -8,6 +8,7 @@ from app.models.holiday import GreekHoliday
 from app.models.department import Department
 from app.forms.hr_forms import SetVacationDaysForm, AssignVacationForm
 from app.services.vacation_service import count_working_days
+from app.services.export_service import export_vacation_entitlements
 from app.routes import hr_required, log_audit
 
 bp = Blueprint('hr', __name__, url_prefix='/hr')
@@ -37,6 +38,24 @@ def users():
     page = request.args.get('page', 1, type=int)
     all_users = User.query.filter_by(is_active=True).order_by(User.username).paginate(page=page, per_page=20, error_out=False)
     return render_template('hr/users.html', users=all_users)
+
+
+@bp.route('/users/export')
+@login_required
+@hr_required
+def export_users():
+    users = User.query.filter_by(is_active=True).order_by(User.username).all()
+    if not users:
+        flash(_('No active users to export.'), 'warning')
+        return redirect(url_for('hr.users'))
+    output = export_vacation_entitlements(users)
+    log_audit('export_vacation_entitlements', f'Exported vacation entitlements for {len(users)} users')
+    return send_file(
+        output,
+        mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        as_attachment=True,
+        download_name='vacation_entitlements.xlsx',
+    )
 
 
 @bp.route('/users/<int:user_id>/set-days', methods=['GET', 'POST'])

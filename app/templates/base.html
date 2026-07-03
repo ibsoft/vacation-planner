@@ -67,6 +67,11 @@
                             <li><a class="dropdown-item" href="{{ url_for('hr.users') }}"><i class="fas fa-user-cog"></i> {{ _('Set Vacation Days') }}</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('hr.assign_vacation') }}"><i class="fas fa-calendar-plus"></i> {{ _('Assign Vacation') }}</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('hr.all_vacations') }}"><i class="fas fa-list"></i> {{ _('All Vacations') }}</a></li>
+                            {% if current_user.is_admin %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ url_for('admin.causes') }}"><i class="fas fa-tags"></i> {{ _('Vacation Causes') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('admin.holidays') }}"><i class="fas fa-star"></i> {{ _('Greek Holidays') }}</a></li>
+                            {% endif %}
                         </ul>
                     </li>
                     {% endif %}

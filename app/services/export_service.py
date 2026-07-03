@@ -45,6 +45,104 @@ def auto_width(ws, num_cols, max_rows=100):
         ws.column_dimensions[get_column_letter(col)].width = min(max(max_len + 2, 12), 30)
 
 
+def export_vacation_entitlements(users, filename_prefix='vacation_entitlements'):
+    wb = Workbook()
+    ws = wb.active
+    ws.title = _('Vacation Entitlements')
+
+    ws.merge_cells('A1:E1')
+    title_cell = ws.cell(row=1, column=1, value=_('Vacation Entitlements Report'))
+    title_cell.font = TITLE_FONT
+    title_cell.alignment = Alignment(horizontal='center', vertical='center')
+    ws.row_dimensions[1].height = 30
+
+    ws.merge_cells('A2:E2')
+    date_cell = ws.cell(row=2, column=1, value=_('Generated on: %(date)s', date=date.today().strftime('%d/%m/%Y')))
+    date_cell.font = Font(italic=True, color='666666', size=10)
+    date_cell.alignment = Alignment(horizontal='center')
+
+    headers = [
+        _('Employee'), _('Department'), _('Vacation Days/Year'), _('Used'), _('Remaining')
+    ]
+    header_row = 4
+    for col, header in enumerate(headers, 1):
+        ws.cell(row=header_row, column=col, value=header)
+    style_header(ws, header_row, len(headers))
+
+    for row_idx, user in enumerate(users, header_row + 1):
+        alt = (row_idx % 2 == 0)
+        values = [
+            user.display_name or user.username,
+            user.department.name if user.department else '',
+            user.vacation_days_per_year,
+            user.vacation_days_per_year - user.remaining_days,
+            user.remaining_days,
+        ]
+        for col_idx, val in enumerate(values, 1):
+            cell = ws.cell(row=row_idx, column=col_idx, value=val)
+            if col_idx in (3, 4, 5):
+                cell.number_format = '0'
+            style_data_cell(cell, alt=alt)
+
+    total_row = header_row + len(users) + 1
+    ws.cell(row=total_row, column=1, value=_('TOTAL')).font = TOTAL_FONT
+    ws.cell(row=total_row, column=1).fill = TOTAL_FILL
+    ws.cell(row=total_row, column=1).alignment = CENTER
+    ws.cell(row=total_row, column=1).border = THIN_BORDER
+    for col in range(2, len(headers) + 1):
+        cell = ws.cell(row=total_row, column=col)
+        cell.fill = TOTAL_FILL
+        cell.border = THIN_BORDER
+        if col == 3:
+            cell.value = f'=SUM(C{header_row + 1}:C{total_row - 1})'
+            cell.font = TOTAL_FONT
+            cell.alignment = CENTER
+            cell.number_format = '0'
+        elif col == 4:
+            cell.value = f'=SUM(D{header_row + 1}:D{total_row - 1})'
+            cell.font = TOTAL_FONT
+            cell.alignment = CENTER
+            cell.number_format = '0'
+        elif col == 5:
+            cell.value = f'=SUM(E{header_row + 1}:E{total_row - 1})'
+            cell.font = TOTAL_FONT
+            cell.alignment = CENTER
+            cell.number_format = '0'
+        else:
+            cell.font = Font(color='FFFFFF', size=11)
+
+    avg_row = total_row + 1
+    ws.cell(row=avg_row, column=1, value=_('AVERAGE')).font = Font(bold=True, size=10, color='1F4E79')
+    ws.cell(row=avg_row, column=1).border = THIN_BORDER
+    for col in range(2, len(headers) + 1):
+        cell = ws.cell(row=avg_row, column=col)
+        cell.border = THIN_BORDER
+        if col == 3:
+            cell.value = f'=AVERAGE(C{header_row + 1}:C{total_row - 1})'
+            cell.number_format = '0.0'
+            cell.font = Font(bold=True, size=10, color='1F4E79')
+            cell.alignment = CENTER
+        elif col == 4:
+            cell.value = f'=AVERAGE(D{header_row + 1}:D{total_row - 1})'
+            cell.number_format = '0.0'
+            cell.font = Font(bold=True, size=10, color='1F4E79')
+            cell.alignment = CENTER
+        elif col == 5:
+            cell.value = f'=AVERAGE(E{header_row + 1}:E{total_row - 1})'
+            cell.number_format = '0.0'
+            cell.font = Font(bold=True, size=10, color='1F4E79')
+            cell.alignment = CENTER
+
+    ws.freeze_panes = 'A5'
+    ws.auto_filter.ref = f'A{header_row}:E{total_row - 1}'
+    auto_width(ws, len(headers))
+
+    output = BytesIO()
+    wb.save(output)
+    output.seek(0)
+    return output
+
+
 def export_vacation_plan(requests, filename_prefix='vacation_plan'):
     wb = Workbook()
     ws = wb.active
