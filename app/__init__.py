@@ -129,7 +129,7 @@ def create_app(config_class=Config):
         from app.models.notification import Notification
         if current_user.is_authenticated:
             unread_count = Notification.query.filter_by(user_id=current_user.id, is_read=False).count()
-            recent_notifications = Notification.query.filter_by(user_id=current_user.id).order_by(Notification.created_at.desc()).limit(10).all()
+            recent_notifications = Notification.query.filter_by(user_id=current_user.id, is_read=False).order_by(Notification.created_at.desc()).limit(10).all()
         else:
             unread_count = 0
             recent_notifications = []
