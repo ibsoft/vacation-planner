@@ -492,7 +492,7 @@ msgstr "Υπάλληλος"
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:112
 #, fuzzy
 msgid "Department"
-msgstr "Τμήματα"
+msgstr "Τμήμα"
 
 msgid "Needs Discussion"
 msgstr "Απαιτείται συζήτηση"
@@ -1565,7 +1565,13 @@ msgstr "Περίοδος"
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:99
 #, fuzzy
 msgid "Edit"
-msgstr "Επεξεργασία Χρήστη"
+msgstr "Επεξεργασία"
+
+msgid "Update"
+msgstr "Ενημέρωση"
+
+msgid "Delete"
+msgstr "Διαγραφή"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:93
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:120
@@ -1868,19 +1874,16 @@ msgstr "Προβολή Όλων"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:2
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:18
-#, fuzzy
 msgid "Edit Vacation Dates"
-msgstr "Επεξεργασία Αιτίας Άδειας"
+msgstr "Επεξεργασία Ημερομηνιών Άδειας"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:23
-#, fuzzy
 msgid "Current Request"
-msgstr "Αίτημα Χρήστη"
+msgstr "Τρέχον Αίτημα"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:28
-#, fuzzy
 msgid "Current Dates"
-msgstr "Τρέχον υπόλοιπο"
+msgstr "Τρέχουσες Ημερομηνίες"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:44
 msgid "Saving changes..."
