@@ -495,6 +495,16 @@ msgstr "Τμήμα"
 msgid "Needs Discussion"
 msgstr "Απαιτείται συζήτηση"
 
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:184
+#, python-format
+msgid "%(name)s marked your vacation request from %(start)s to %(end)s as needing discussion."
+msgstr "Ο/Η %(name)s χαρακτήρισε το αίτημά σας για άδεια από %(start)s έως %(end)s ως προς συζήτηση."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:195
+#, python-format
+msgid "%(name)s marked the vacation request for %(employee)s from %(start)s to %(end)s as needing discussion."
+msgstr "Ο/Η %(name)s χαρακτήρισε το αίτημα άδειας για %(employee)s από %(start)s έως %(end)s ως προς συζήτηση."
+
 #: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:21
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:23
