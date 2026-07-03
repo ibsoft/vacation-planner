@@ -76,9 +76,29 @@
                         </td>
                         <td>
                             {% if req.status in ('pending', 'approved') %}
-                            <a href="{{ url_for('vacation.edit_request', req_id=req.id) }}" class="btn btn-sm btn-outline-primary">
+                            <a href="{{ url_for('vacation.edit_request', req_id=req.id) }}" class="btn btn-sm btn-outline-primary me-1 mb-1">
                                 <i class="fas fa-pen me-1"></i>{{ _('Edit') }}
                             </a>
+                            {% endif %}
+                            {% if current_user.is_hr or current_user.is_admin %}
+                            <form method="POST" action="{{ url_for('vacation.update_request_status', req_id=req.id) }}" class="d-inline-flex align-items-center gap-1 mb-1">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <select class="form-select form-select-sm" name="status" style="min-width:140px;">
+                                    <option value="pending" {% if req.status == 'pending' %}selected{% endif %}>{{ _('Pending') }}</option>
+                                    <option value="approved" {% if req.status == 'approved' %}selected{% endif %}>{{ _('Approved') }}</option>
+                                    <option value="hr_assigned" {% if req.status == 'hr_assigned' %}selected{% endif %}>{{ _('HR Assigned') }}</option>
+                                    <option value="rejected" {% if req.status == 'rejected' %}selected{% endif %}>{{ _('Rejected') }}</option>
+                                    <option value="cancelled" {% if req.status == 'cancelled' %}selected{% endif %}>{{ _('Cancelled') }}</option>
+                                    <option value="needs_discussion" {% if req.status == 'needs_discussion' %}selected{% endif %}>{{ _('Needs Discussion') }}</option>
+                                </select>
+                                <button type="submit" class="btn btn-sm btn-outline-secondary">{{ _('Update') }}</button>
+                            </form>
+                            <form method="POST" action="{{ url_for('vacation.delete_request', req_id=req.id) }}" class="d-inline">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="{{ _('Delete this vacation request?') }}">
+                                    <i class="fas fa-trash me-1"></i>{{ _('Delete') }}
+                                </button>
+                            </form>
                             {% endif %}
                         </td>
                     </tr>

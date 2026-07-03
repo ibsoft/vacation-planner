@@ -494,6 +494,9 @@ msgstr "Υπάλληλος"
 msgid "Department"
 msgstr "Τμήματα"
 
+msgid "Needs Discussion"
+msgstr "Απαιτείται συζήτηση"
+
 #: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:21
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:23
