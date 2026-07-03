@@ -1721,6 +1721,27 @@ msgstr "Νέες Ημερομηνίες Αιτήματος"
 msgid "Reason for Change"
 msgstr "Λόγος Αλλαγής"
 
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/change_requested.html:1
+#, python-format
+msgid "%(name)s requested a change to their vacation."
+msgstr "Ο/Η %(name)s ζήτησε αλλαγή στην άδειά του/της."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/change_requested.html:2
+msgid "Original dates"
+msgstr "Αρχικές ημερομηνίες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/change_requested.html:3
+msgid "Requested new dates"
+msgstr "Ζητούμενες νέες ημερομηνίες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/change_requested.html:4
+msgid "Reason for change"
+msgstr "Λόγος αλλαγής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/change_requested.html:5
+msgid "Review change request"
+msgstr "Αξιολόγηση αιτήματος αλλαγής"
+
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:81
 #, fuzzy
 msgid "Approve Change"
