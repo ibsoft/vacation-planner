@@ -1467,8 +1467,8 @@ msgstr "Ανατέθηκε από:"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:7
 #, python-format
-msgid "%(name)s has submitted a new vacation request:"
-msgstr "Ο/Η %(name)s υπέβαλε ένα νέο αίτημα άδειας:"
+msgid "%(name)s has submitted a new vacation request that requires your approval:"
+msgstr "Ο/Η %(name)s υπέβαλε ένα νέο αίτημα άδειας που χρειάζεται την έγκρισή σας:"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:12
 msgid "Reason:"
