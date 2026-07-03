@@ -190,6 +190,8 @@ def update_request_status(req_id):
         notify_vacation_cancelled_by_admin,
         notify_vacation_discussion,
         notify_manager_about_request,
+        notify_status_pending,
+        notify_hr_assigned,
     )
 
     if status == 'approved':
@@ -220,6 +222,20 @@ def update_request_status(req_id):
         notify_vacation_cancelled_by_admin(req, current_user)
     elif status == 'needs_discussion':
         notify_vacation_discussion(req, current_user)
+    elif status == 'pending':
+        notify_status_pending(req, current_user)
+        notify_manager_about_request(
+            req,
+            _('Vacation Pending'),
+            _('Vacation request for %(name)s from %(start)s to %(end)s was set to pending by %(actor)s.',
+              name=req.user.display_name or req.user.username,
+              start=req.start_date.strftime('%d/%m/%Y'),
+              end=req.end_date.strftime('%d/%m/%Y'),
+              actor=current_user.display_name or current_user.username),
+            link='/manager/team'
+        )
+    elif status == 'hr_assigned':
+        notify_hr_assigned(req, current_user)
 
     status_labels = {
         'pending': _('Pending'),
