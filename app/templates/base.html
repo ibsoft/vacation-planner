@@ -222,12 +222,19 @@
             if (!item) return;
             var id = item.getAttribute('data-notif-id');
             fetch('/notifications/' + id + '/read', { method: 'POST', headers: { 'X-CSRF-Token': csrfToken } });
-            item.style.opacity = '0.4';
+            var li = item.closest('li');
+            if (li) li.remove();
             var badge = document.querySelector('#notifDropdown .badge');
             if (badge) {
                 var count = parseInt(badge.textContent);
                 if (count > 1) badge.textContent = count - 1;
                 else badge.remove();
+            }
+            if (!document.querySelectorAll('#notifMenu [data-notif-id]').length) {
+                var menu = document.getElementById('notifMenu');
+                var headerText = menu.querySelector('.dropdown-header').textContent;
+                var emptyText = menu.getAttribute('data-empty-text');
+                menu.innerHTML = '<li><h6 class="dropdown-header">' + headerText + '</h6></li><li><span class="dropdown-item-text text-muted small">' + emptyText + '</span></li>';
             }
         });
     </script>
