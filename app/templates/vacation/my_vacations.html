@@ -58,9 +58,20 @@
                     {% for req in group %}
                     <tr>
                         <td>
-                            <strong>{{ req.start_date.strftime('%d/%m/%Y') }}</strong>
-                            <i class="fas fa-arrow-right mx-1 text-muted"></i>
-                            <strong>{{ req.end_date.strftime('%d/%m/%Y') }}</strong>
+                            {% if req.change_status == 'pending' and req.change_requested_start and req.change_requested_end %}
+                                <div>
+                                    <small class="text-muted"><s>{{ req.start_date.strftime('%d/%m/%Y') }} <i class="fas fa-arrow-right mx-1"></i> {{ req.end_date.strftime('%d/%m/%Y') }}</s></small>
+                                </div>
+                                <div>
+                                    <strong>{{ req.change_requested_start.strftime('%d/%m/%Y') }}</strong>
+                                    <i class="fas fa-arrow-right mx-1 text-muted"></i>
+                                    <strong>{{ req.change_requested_end.strftime('%d/%m/%Y') }}</strong>
+                                </div>
+                            {% else %}
+                                <strong>{{ req.start_date.strftime('%d/%m/%Y') }}</strong>
+                                <i class="fas fa-arrow-right mx-1 text-muted"></i>
+                                <strong>{{ req.end_date.strftime('%d/%m/%Y') }}</strong>
+                            {% endif %}
                         </td>
                         <td><span class="badge bg-secondary">{{ req.days_count }}</span></td>
                         <td>
@@ -93,7 +104,7 @@
                             {% endif %}
                             {% if req.status in ('pending', 'approved') and req.request_type != 'hr_assigned' and req.change_status != 'pending' %}
                             <a href="{{ url_for('vacation.change_request', req_id=req.id) }}" class="btn btn-sm btn-outline-warning">
-                                <i class="fas fa-edit me-1"></i>{{ _('Request Change') }}
+                                <i class="fas fa-edit me-1"></i><span>{{ _('Request Change') }}</span>
                             </a>
                             {% endif %}
                             {% if req.status == 'pending' %}
