@@ -365,19 +365,28 @@
             setTimeout(function() { toast.remove(); }, 5000);
         }
 
+        var spinnerShownAt = null;
+        var spinnerMinDuration = 400;
+
         function showSpinner(text) {
             var overlay = document.getElementById('spinnerOverlay');
             if (!overlay) return;
             document.getElementById('spinnerText').textContent = text || '{{ _('Loading...') }}';
             overlay.classList.remove('d-none');
             overlay.style.display = 'flex';
+            spinnerShownAt = Date.now();
         }
 
         function hideSpinner() {
             var overlay = document.getElementById('spinnerOverlay');
-            if (!overlay) return;
-            overlay.classList.add('d-none');
-            overlay.style.display = 'none';
+            if (!overlay || spinnerShownAt === null) return;
+            var elapsed = Date.now() - spinnerShownAt;
+            var delay = Math.max(0, spinnerMinDuration - elapsed);
+            setTimeout(function() {
+                overlay.classList.add('d-none');
+                overlay.style.display = 'none';
+                spinnerShownAt = null;
+            }, delay);
         }
 
         {% with messages = get_flashed_messages(with_categories=true) %}
