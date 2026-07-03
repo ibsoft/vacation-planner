@@ -1495,6 +1495,12 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+msgid "Update"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:93
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:120
 msgid "No vacation requests found."
