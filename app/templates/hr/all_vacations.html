@@ -72,7 +72,8 @@
                             {% elif req.status == 'pending' %}<span class="badge bg-warning text-dark">{{ _('Pending') }}</span>
                             {% elif req.status == 'hr_assigned' %}<span class="badge bg-info">{{ _('HR Assigned') }}</span>
                             {% elif req.status == 'rejected' %}<span class="badge bg-danger">{{ _('Rejected') }}</span>
-                            {% elif req.status == 'cancelled' %}<span class="badge bg-secondary">{{ _('Cancelled') }}</span>{% endif %}
+                            {% elif req.status == 'cancelled' %}<span class="badge bg-secondary">{{ _('Cancelled') }}</span>
+                            {% elif req.status == 'needs_discussion' %}<span class="badge bg-info">{{ _('Needs Discussion') }}</span>{% endif %}
                         </td>
                         <td>
                             {% if req.status in ('pending', 'approved') %}
