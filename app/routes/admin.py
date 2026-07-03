@@ -31,8 +31,8 @@ def dashboard():
         'pending_requests': VacationRequest.query.filter_by(status='pending').count(),
         'approved_this_month': VacationRequest.query.filter(
             VacationRequest.status.in_(['approved', 'hr_assigned']),
-            db.extract('month', VacationRequest.created_at) == db.func.strftime('%m', db.func.now()),
-            db.extract('year', VacationRequest.created_at) == db.func.strftime('%Y', db.func.now()),
+            db.extract('month', VacationRequest.created_at) == db.extract('month', db.func.now()),
+            db.extract('year', VacationRequest.created_at) == db.extract('year', db.func.now()),
         ).count(),
         'total_holidays': GreekHoliday.query.count(),
         'active_causes': VacationCause.query.filter_by(is_active=True).count(),

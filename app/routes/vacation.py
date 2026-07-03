@@ -363,7 +363,7 @@ def team_calendar():
     ).order_by(VacationRequest.start_date.asc()).all()
 
     holidays = GreekHoliday.query.filter(
-        db.extract('year', GreekHoliday.date) == db.func.strftime('%Y', db.func.now())
+        db.extract('year', GreekHoliday.date) == db.extract('year', db.func.now())
     ).all()
 
     departments = Department.query.order_by(Department.name).all()
