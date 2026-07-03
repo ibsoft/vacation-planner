@@ -407,7 +407,6 @@ msgid "HR-assigned vacations cannot be changed."
 msgstr "Οι άδειες που ανατέθηκαν από ΔΑΔ δεν μπορούν να αλλάξουν."
 
 #: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:182
-#, fuzzy
 msgid "Vacation Change Request"
 msgstr "Νέο Αίτημα Άδειας"
 
@@ -419,7 +418,6 @@ msgid ""
 msgstr "Ο/Η %(name)s ζήτησε αλλαγή άδειας από %(orig_start)s έως %(orig_end)s: νέες ημερομηνίες %(new_start)s έως %(new_end)s."
 
 #: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:192
-#, fuzzy
 msgid "Change request submitted for approval."
 msgstr "Το αίτημα άδειας υποβλήθηκε για έγκριση."
 
