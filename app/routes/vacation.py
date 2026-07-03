@@ -173,7 +173,7 @@ def change_request(req_id):
         req.change_status = 'pending'
         db.session.commit()
         log_audit('vacation_change_request', f'Change requested for vacation #{req.id}: {form.start_date.data} to {form.end_date.data}')
-        from app.services.notification_service import send_notification
+        from app.services.notification_service import send_notification, send_email_notification, _with_locale
         manager = current_user.manager
         if manager:
             send_notification(
@@ -188,6 +188,22 @@ def change_request(req_id):
                 'info',
                 link=f'/manager/approve/{req.id}'
             )
+            if manager.email:
+                new_start_fmt = form.start_date.data.strftime('%d/%m/%Y')
+                new_end_fmt = form.end_date.data.strftime('%d/%m/%Y')
+                def _send():
+                    body_html = render_template('emails/change_requested.html',
+                        request=req, user=current_user, recipient=manager,
+                        new_start=new_start_fmt, new_end=new_end_fmt,
+                        change_reason=form.change_reason.data)
+                    body_text = _('%(name)s requested a change to their vacation from %(orig_start)s to %(orig_end)s: new dates %(new_start)s to %(new_end)s.\nReason: %(reason)s',
+                        name=current_user.display_name or current_user.username,
+                        orig_start=req.start_date.strftime('%d/%m/%Y'),
+                        orig_end=req.end_date.strftime('%d/%m/%Y'),
+                        new_start=new_start_fmt, new_end=new_end_fmt,
+                        reason=form.change_reason.data)
+                    send_email_notification(manager.email, _('Vacation Change Request'), body_html, body_text)
+                _with_locale(_send)
         flash(_('Change request submitted for approval.'), 'success')
         return redirect(url_for('vacation.my_vacations'))
     return render_template('vacation/change_request.html', form=form, req=req)
