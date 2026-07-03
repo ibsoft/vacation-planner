@@ -57,8 +57,8 @@ def login():
 @login_required
 def logout():
     log_audit('logout', f'User {current_user.username} logged out')
-    logout_user()
     session.clear()
+    logout_user()
     flash(_('You have been logged out.'), 'info')
     return redirect(url_for('auth.login'))
 
