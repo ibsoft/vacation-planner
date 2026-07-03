@@ -109,7 +109,11 @@
                             {% endif %}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" style="width:350px;max-height:400px;overflow-y:auto;" id="notifMenu" data-empty-text="{{ _('No notifications') }}">
-                            <li><h6 class="dropdown-header">{{ _('Notifications') }}</h6></li>
+                            <li><div class="dropdown-header d-flex justify-content-between align-items-center">
+                                <span>{{ _('Notifications') }}</span>
+                                <button type="button" class="btn btn-sm btn-link" id="clearNotificationsBtn">{{ _('Clear all') }}</button>
+                            </div></li>
+                            <li><hr class="dropdown-divider"></li>
                             {% if recent_notifications %}
                             {% for notif in recent_notifications %}
                             <li>
@@ -222,27 +226,124 @@
         var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     </script>
     <script>
-        document.getElementById('notifMenu')?.addEventListener('click', function(e) {
-            var item = e.target.closest('[data-notif-id]');
-            if (!item) return;
-            var id = item.getAttribute('data-notif-id');
-            var formData = new FormData();
-            formData.append('csrf_token', csrfToken);
-            navigator.sendBeacon('/notifications/' + id + '/read', formData);
-            var li = item.closest('li');
-            if (li) li.remove();
+        function renderNotifications(notifications) {
+            var notifMenu = document.getElementById('notifMenu');
+            if (!notifMenu) return;
+
+            var emptyText = notifMenu.getAttribute('data-empty-text') || '{{ _('No notifications') }}';
+            var content = '';
+            content += '<li><div class="dropdown-header d-flex justify-content-between align-items-center">';
+            content += '<span>{{ _('Notifications') }}</span>';
+            content += '<button type="button" class="btn btn-sm btn-link" id="clearNotificationsBtn">{{ _('Clear all') }}</button>';
+            content += '</div></li><li><hr class="dropdown-divider"></li>';
+
+            if (!notifications.length) {
+                content += '<li><span class="dropdown-item-text text-muted small">' + emptyText + '</span></li>';
+            } else {
+                notifications.forEach(function(notif) {
+                    var icon = '<i class="fas fa-info-circle text-info"></i>';
+                    if (notif.type === 'success') icon = '<i class="fas fa-check-circle text-success"></i>';
+                    else if (notif.type === 'danger') icon = '<i class="fas fa-times-circle text-danger"></i>';
+                    else if (notif.type === 'warning') icon = '<i class="fas fa-exclamation-triangle text-warning"></i>';
+                    content += '<li>';
+                    content += '<a class="dropdown-item d-flex align-items-start gap-2 py-2 bg-light" href="' + (notif.link || '#') + '" data-notif-id="' + notif.id + '">';
+                    content += '<div class="mt-1">' + icon + '</div>';
+                    content += '<div class="flex-grow-1" style="max-width:260px;">';
+                    content += '<div class="fw-small">' + notif.title + '</div>';
+                    content += '<small class="text-muted">' + (notif.message || '') + '</small>';
+                    content += '<br><small class="text-muted">' + (notif.created_at || '') + '</small>';
+                    content += '</div>';
+                    content += '</a>';
+                    content += '</li>';
+                });
+                content += '<li><hr class="dropdown-divider"></li>';
+                content += '<li><a class="dropdown-item text-center small" href="{{ url_for('vacation.my_vacations') }}">{{ _('See all') }}</a></li>';
+            }
+
+            notifMenu.innerHTML = content;
+            bindNotificationEvents();
+        }
+
+        function updateBadge(count) {
             var badge = document.querySelector('#notifDropdown .badge');
-            if (badge) {
-                var count = parseInt(badge.textContent);
-                if (count > 1) badge.textContent = count - 1;
-                else badge.remove();
+            if (count > 0) {
+                if (badge) badge.textContent = count < 100 ? count : '99+';
+                else {
+                    var span = document.createElement('span');
+                    span.className = 'position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger';
+                    span.style.fontSize = '0.6rem';
+                    span.textContent = count < 100 ? count : '99+';
+                    document.querySelector('#notifDropdown').appendChild(span);
+                }
+            } else if (badge) {
+                badge.remove();
             }
-            if (!document.querySelectorAll('#notifMenu [data-notif-id]').length) {
-                var menu = document.getElementById('notifMenu');
-                var headerText = menu.querySelector('.dropdown-header').textContent;
-                var emptyText = menu.getAttribute('data-empty-text');
-                menu.innerHTML = '<li><h6 class="dropdown-header">' + headerText + '</h6></li><li><span class="dropdown-item-text text-muted small">' + emptyText + '</span></li>';
+        }
+
+        function bindNotificationEvents() {
+            var notifMenu = document.getElementById('notifMenu');
+            if (!notifMenu) return;
+
+            notifMenu.querySelectorAll('[data-notif-id]').forEach(function(item) {
+                item.addEventListener('click', function(e) {
+                    var notifId = item.getAttribute('data-notif-id');
+                    if (!notifId) return;
+                    e.preventDefault();
+
+                    fetch('/notifications/' + notifId + '/read', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': csrfToken,
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function() {
+                        item.remove();
+                        var remaining = document.querySelectorAll('#notifMenu [data-notif-id]').length;
+                        updateBadge(remaining);
+                        if (!remaining) {
+                            renderNotifications([]);
+                        }
+                        var href = item.getAttribute('href');
+                        if (href && href !== '#') {
+                            window.location = href;
+                        }
+                    });
+                });
+            });
+
+            var clearBtn = document.getElementById('clearNotificationsBtn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    fetch('/notifications/clear', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRFToken': csrfToken,
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function() {
+                        renderNotifications([]);
+                        updateBadge(0);
+                    });
+                });
             }
+        }
+
+        function loadNotifications() {
+            showSpinner('{{ _('Loading...') }}');
+            fetch('/notifications/recent')
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    renderNotifications(data.notifications || []);
+                    updateBadge(data.notifications ? data.notifications.length : 0);
+                })
+                .finally(function() {
+                    hideSpinner();
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNotifications();
         });
     </script>
     <script>
@@ -263,6 +364,22 @@
             container.appendChild(toast);
             setTimeout(function() { toast.remove(); }, 5000);
         }
+
+        function showSpinner(text) {
+            var overlay = document.getElementById('spinnerOverlay');
+            if (!overlay) return;
+            document.getElementById('spinnerText').textContent = text || '{{ _('Loading...') }}';
+            overlay.classList.remove('d-none');
+            overlay.style.display = 'flex';
+        }
+
+        function hideSpinner() {
+            var overlay = document.getElementById('spinnerOverlay');
+            if (!overlay) return;
+            overlay.classList.add('d-none');
+            overlay.style.display = 'none';
+        }
+
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
         {% for category, message in messages %}
