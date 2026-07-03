@@ -1,15 +1,28 @@
 {% extends "base.html" %}
 {% block title %}{{ _('Request Vacation Date Change') }}{% endblock %}
 
+{% block extra_head %}
+<style>
+.change-request-wrapper { min-height: calc(100vh - 170px); display: flex; flex-direction: column; }
+.change-request-card { flex: 1 1 auto; display: flex; flex-direction: column; }
+.change-request-card .card-body { display: flex; flex-direction: column; height: 100%; }
+.change-request-card .form-content { flex: 1; display: flex; flex-direction: column; }
+.change-request-card .form-actions { margin-top: auto; }
+.change-request-card .form-row { flex: 1; }
+.change-request-card textarea.form-control { min-height: 260px; }
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="row">
-    <div class="col-12 col-lg-8">
-        <div class="card border-0 shadow-sm rounded-4 mb-4">
+<div class="row h-100">
+    <div class="col-12 change-request-wrapper">
+        <div class="card border-0 shadow-sm rounded-4 mb-4 change-request-card">
             <div class="card-header bg-white border-0 pt-3">
                 <h4 class="mb-0"><i class="fas fa-calendar-alt me-2 text-warning"></i>{{ _('Request Vacation Date Change') }}</h4>
             </div>
-            <div class="card-body">
-                <div class="alert alert-info rounded-4 mb-4">
+            <div class="card-body p-4">
+                <div class="form-content">
+                    <div class="alert alert-info rounded-4 mb-4">
                     <h6 class="alert-heading">{{ _('Original Request') }}</h6>
                     <p class="mb-1">
                         <strong>{{ _('Dates') }}:</strong>
@@ -25,9 +38,9 @@
                     </p>
                 </div>
 
-                <form method="POST">
+                <form method="POST" class="h-100 d-flex flex-column">
                     {{ form.hidden_tag() }}
-                    <div class="row mb-3">
+                    <div class="row mb-3 form-row">
                         <div class="col-md-6">
                             <label class="form-label">{{ form.start_date.label.text }}</label>
                             {{ form.start_date(class="form-control" + (" is-invalid" if form.start_date.errors else "")) }}
@@ -43,16 +56,16 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <div class="row mb-4">
-                        <div class="col-12">
+                    <div class="row mb-4 flex-grow-1 form-row">
+                        <div class="col-12 h-100">
                             <label class="form-label">{{ form.change_reason.label.text }}</label>
-                            {{ form.change_reason(class="form-control" + (" is-invalid" if form.change_reason.errors else ""), rows=4, placeholder=_("Explain why you need to change the dates...")) }}
+                            {{ form.change_reason(class="form-control h-100" + (" is-invalid" if form.change_reason.errors else ""), rows=8, placeholder=_("Explain why you need to change the dates...")) }}
                             {% for error in form.change_reason.errors %}
                             <div class="invalid-feedback">{{ error }}</div>
                             {% endfor %}
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-auto form-actions">
                         <div class="col-12 d-flex gap-2">
                             <button type="submit" class="btn btn-warning btn-lg">{{ _('Submit Change Request') }}</button>
                             <a href="{{ url_for('vacation.my_vacations') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
