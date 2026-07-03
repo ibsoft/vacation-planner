@@ -154,7 +154,7 @@ def change_request(req_id):
         if days_count == 0:
             flash(_('Selected range has no working days (weekends/holidays).'), 'warning')
             return render_template('vacation/change_request.html', form=form, req=req)
-        if current_user.remaining_days < days_count:
+        if current_user.remaining_days + req.days_count < days_count:
             flash(_('Insufficient vacation days remaining.'), 'danger')
             return render_template('vacation/change_request.html', form=form, req=req)
         overlap = VacationRequest.query.filter(
