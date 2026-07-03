@@ -117,7 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const statusLabels = {
                 'approved': '{{ _("Approved") }}',
                 'pending': '{{ _("Pending") }}',
-                'hr_assigned': '{{ _("HR Assigned") }}'
+                'hr_assigned': '{{ _("HR Assigned") }}',
+                'needs_discussion': '{{ _("Needs Discussion") }}'
             };
             const start = info.event.start.toLocaleDateString();
             const end = info.event.end ? new Date(info.event.end.getTime() - 86400000).toLocaleDateString() : start;

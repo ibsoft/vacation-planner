@@ -74,6 +74,8 @@
                             <span class="badge bg-secondary"><i class="fas fa-ban me-1"></i>{{ _('Cancelled') }}</span>
                             {% elif req.status == 'hr_assigned' %}
                             <span class="badge bg-info"><i class="fas fa-user-tie me-1"></i>{{ _('HR Assigned') }}</span>
+                            {% elif req.status == 'needs_discussion' %}
+                            <span class="badge bg-info"><i class="fas fa-comments me-1"></i>{{ _('Needs Discussion') }}</span>
                             {% endif %}
                         </td>
                         <td>
