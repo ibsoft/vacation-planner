@@ -1423,14 +1423,14 @@ msgstr "Ανεβάστε φωτογραφία ή χρησιμοποιήστε Gr
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:6
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:6
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:6
-#, fuzzy, python-format
+#, python-format
 msgid "Hello %(name)s,"
-msgstr "Καλώς ήρθες, %(name)s!"
+msgstr "Γειά σας %(name)s,"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:7
 #, fuzzy
 msgid "Your vacation request has been approved."
-msgstr "Το αίτημα άδειας υποβλήθηκε για έγκριση."
+msgstr "Το αίτημα άδειάς σας εγκρίθηκε."
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:9
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:9
@@ -1450,42 +1450,41 @@ msgstr "Έως:"
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:11
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:11
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:11
-#, fuzzy
 msgid "Days:"
-msgstr "Ημέρες"
+msgstr "Ημέρες:"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:12
-#, fuzzy
 msgid "Approved by:"
-msgstr "Εγκεκριμένο"
+msgstr "Εγκεκριμένο από:"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:7
 msgid "A vacation has been assigned to you by HR."
-msgstr "Σας ανατέθηκε άδεια από το ΔΑΔ."
+msgstr "Σας ανατέθηκε άδεια από την HR."
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:12
-#, fuzzy
 msgid "Assigned by:"
-msgstr "Ανάθεση από ΔΑΔ"
+msgstr "Ανατέθηκε από:"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:7
-#, fuzzy, python-format
+#, python-format
 msgid "%(name)s has submitted a new vacation request:"
-msgstr "Αξιολόγηση Αιτήματος Άδειας"
+msgstr "Ο/Η %(name)s υπέβαλε ένα νέο αίτημα άδειας:"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:12
-#, fuzzy
 msgid "Reason:"
-msgstr "Αιτιολογία"
+msgstr "Λόγος:"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:12
 msgid "N/A"
 msgstr "Δ/Υ"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:14
-#, fuzzy
-msgid "Review Request"
-msgstr "Νέο Αίτημα"
+msgid "Review & Decide"
+msgstr "Αξιολόγηση και Απόφαση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:14
+msgid "Please log in to the system to approve or reject this request."
+msgstr "Παρακαλώ συνδεθείτε στο σύστημα για να εγκρίνετε ή να απορρίψετε αυτό το αίτημα."
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:7
 #, fuzzy
