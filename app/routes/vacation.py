@@ -101,7 +101,7 @@ def new_request():
     return render_template('vacation/new_request.html', form=form, holiday_dates=holiday_dates)
 
 
-@bp.route('/vacation/my')
+@bp.route('/vacation/my-vacations')
 @login_required
 def my_vacations():
     page = request.args.get('page', 1, type=int)
