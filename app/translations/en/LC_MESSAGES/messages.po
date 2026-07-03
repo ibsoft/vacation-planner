@@ -475,6 +475,9 @@ msgstr ""
 msgid "Department"
 msgstr ""
 
+msgid "Needs Discussion"
+msgstr "Needs Discussion"
+
 #: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:21
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:23

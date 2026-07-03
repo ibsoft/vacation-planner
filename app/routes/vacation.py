@@ -132,6 +132,107 @@ def cancel_request(req_id):
     return redirect(url_for('vacation.my_vacations'))
 
 
+@bp.route('/vacation/<int:req_id>/delete', methods=['POST'])
+@login_required
+def delete_request(req_id):
+    req = db.session.get(VacationRequest, req_id)
+    if not req:
+        flash(_('Request not found.'), 'danger')
+        return redirect(url_for('hr.all_vacations'))
+    if not (current_user.is_hr or current_user.is_admin):
+        flash(_('You are not authorized to delete this request.'), 'danger')
+        return redirect(url_for('vacation.my_vacations'))
+    db.session.delete(req)
+    db.session.commit()
+    log_audit('delete_vacation_request', f'Deleted vacation request #{req.id} for user {req.user.username}')
+    flash(_('Vacation request deleted.'), 'success')
+    return redirect(url_for('hr.all_vacations'))
+
+
+@bp.route('/vacation/<int:req_id>/status', methods=['POST'])
+@login_required
+def update_request_status(req_id):
+    if not (current_user.is_hr or current_user.is_admin):
+        flash(_('You are not authorized to change this vacation request status.'), 'danger')
+        return redirect(url_for('vacation.my_vacations'))
+
+    req = db.session.get(VacationRequest, req_id)
+    if not req:
+        flash(_('Request not found.'), 'danger')
+        return redirect(url_for('hr.all_vacations'))
+
+    status = request.form.get('status')
+    allowed_statuses = {'pending', 'approved', 'rejected', 'cancelled', 'needs_discussion', 'hr_assigned'}
+    if status not in allowed_statuses:
+        flash(_('Invalid status selected.'), 'danger')
+        return redirect(url_for('hr.all_vacations'))
+
+    if status == req.status:
+        flash(_('Vacation status is already %(status)s.', status={
+            'pending': _('Pending'),
+            'approved': _('Approved'),
+            'hr_assigned': _('HR Assigned'),
+            'rejected': _('Rejected'),
+            'cancelled': _('Cancelled'),
+            'needs_discussion': _('Needs Discussion'),
+        }[status]), 'info')
+        return redirect(url_for('hr.all_vacations'))
+
+    req.status = status
+    if status == 'approved':
+        req.approved_by = current_user.id
+        req.approved_at = db.func.now()
+    db.session.commit()
+
+    from app.services.notification_service import (
+        notify_vacation_approved,
+        notify_vacation_rejected,
+        notify_vacation_cancelled_by_admin,
+        notify_vacation_discussion,
+        notify_manager_about_request,
+    )
+
+    if status == 'approved':
+        notify_vacation_approved(req, current_user)
+        notify_manager_about_request(
+            req,
+            _('Vacation Approved'),
+            _('Vacation request for %(name)s from %(start)s to %(end)s has been approved by %(actor)s.',
+              name=req.user.display_name or req.user.username,
+              start=req.start_date.strftime('%d/%m/%Y'),
+              end=req.end_date.strftime('%d/%m/%Y'),
+              actor=current_user.display_name or current_user.username),
+            link='/manager/team'
+        )
+    elif status == 'rejected':
+        notify_vacation_rejected(req, current_user)
+        notify_manager_about_request(
+            req,
+            _('Vacation Rejected'),
+            _('Vacation request for %(name)s from %(start)s to %(end)s has been rejected by %(actor)s.',
+              name=req.user.display_name or req.user.username,
+              start=req.start_date.strftime('%d/%m/%Y'),
+              end=req.end_date.strftime('%d/%m/%Y'),
+              actor=current_user.display_name or current_user.username),
+            link='/manager/team'
+        )
+    elif status == 'cancelled':
+        notify_vacation_cancelled_by_admin(req, current_user)
+    elif status == 'needs_discussion':
+        notify_vacation_discussion(req, current_user)
+
+    status_labels = {
+        'pending': _('Pending'),
+        'approved': _('Approved'),
+        'hr_assigned': _('HR Assigned'),
+        'rejected': _('Rejected'),
+        'cancelled': _('Cancelled'),
+        'needs_discussion': _('Needs Discussion'),
+    }
+    flash(_('Vacation status updated to %(status)s.', status=status_labels[status]), 'success')
+    return redirect(url_for('hr.all_vacations'))
+
+
 @bp.route('/vacation/<int:req_id>/change', methods=['GET', 'POST'])
 @login_required
 def change_request(req_id):

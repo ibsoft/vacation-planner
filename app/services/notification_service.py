@@ -153,6 +153,68 @@ def notify_vacation_cancelled(request_obj):
             _with_locale(_send)
 
 
+def notify_vacation_cancelled_by_admin(request_obj, actor):
+    user = request_obj.user
+    manager = user.manager
+    start_fmt, end_fmt = _fmt_dates(request_obj)
+    title = _('Vacation Cancelled')
+    user_message = _('%(name)s cancelled your vacation request from %(start)s to %(end)s.',
+                     name=actor.display_name or actor.username,
+                     start=start_fmt, end=end_fmt)
+    send_notification(user.id, title, user_message, 'warning', link='/vacation/my-vacations')
+    if user.email:
+        def _send():
+            send_email_notification(user.email, title, user_message, user_message)
+        _with_locale(_send)
+
+    if manager and manager.id != user.id:
+        manager_message = _('%(name)s cancelled the vacation request for %(employee)s from %(start)s to %(end)s.',
+                            name=actor.display_name or actor.username,
+                            employee=user.display_name or user.username,
+                            start=start_fmt, end=end_fmt)
+        send_notification(manager.id, title, manager_message, 'warning', link='/manager/team')
+        if manager.email:
+            def _send_manager():
+                send_email_notification(manager.email, title, manager_message, manager_message)
+            _with_locale(_send_manager)
+
+
+def notify_vacation_discussion(request_obj, actor):
+    user = request_obj.user
+    manager = user.manager
+    start_fmt, end_fmt = _fmt_dates(request_obj)
+    title = _('Needs Discussion')
+    user_message = _('%(name)s marked your vacation request from %(start)s to %(end)s as needing discussion.',
+                     name=actor.display_name or actor.username,
+                     start=start_fmt, end=end_fmt)
+    send_notification(user.id, title, user_message, 'warning', link='/vacation/my-vacations')
+    if user.email:
+        def _send():
+            send_email_notification(user.email, title, user_message, user_message)
+        _with_locale(_send)
+
+    if manager and manager.id != user.id:
+        manager_message = _('%(name)s marked the vacation request for %(employee)s from %(start)s to %(end)s as needing discussion.',
+                            name=actor.display_name or actor.username,
+                            employee=user.display_name or user.username,
+                            start=start_fmt, end=end_fmt)
+        send_notification(manager.id, title, manager_message, 'info', link='/manager/team')
+        if manager.email:
+            def _send_manager():
+                send_email_notification(manager.email, title, manager_message, manager_message)
+            _with_locale(_send_manager)
+
+
+def notify_manager_about_request(request_obj, title, message, type='info', link=None):
+    manager = request_obj.user.manager
+    if manager and manager.id != request_obj.user_id:
+        send_notification(manager.id, title, message, type, link=link)
+        if manager.email:
+            def _send():
+                send_email_notification(manager.email, title, message, message)
+            _with_locale(_send)
+
+
 def notify_hr_assigned(request_obj, assigned_by):
     start_fmt, end_fmt = _fmt_dates(request_obj)
     title = _('Vacation Assigned')
