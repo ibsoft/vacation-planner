@@ -230,3 +230,33 @@ def notify_hr_assigned(request_obj, assigned_by):
                           start=start_fmt, end=end_fmt)
             send_email_notification(user.email, title, body_html, body_text)
         _with_locale(_send)
+
+
+def notify_status_pending(request_obj, actor):
+    """Notify user and manager that the request status was set to pending by HR/Admin."""
+    user = request_obj.user
+    manager = user.manager
+    start_fmt, end_fmt = _fmt_dates(request_obj)
+    title = _('Vacation Pending')
+    user_msg = _('%(actor)s set your vacation request from %(start)s to %(end)s to pending.',
+                 actor=actor.display_name or actor.username,
+                 start=start_fmt, end=end_fmt)
+
+    send_notification(user.id, title, user_msg, 'warning', link='/vacation/my-vacations')
+    if user.email:
+        def _send_user():
+            body_html = render_template('emails/status_pending.html', request=request_obj, actor=actor, user=user)
+            body_text = user_msg
+            send_email_notification(user.email, title, body_html, body_text)
+        _with_locale(_send_user)
+
+    if manager and manager.id != user.id:
+        manager_msg = _('%(actor)s set the vacation request for %(employee)s from %(start)s to %(end)s to pending.',
+                        actor=actor.display_name or actor.username,
+                        employee=user.display_name or user.username,
+                        start=start_fmt, end=end_fmt)
+        send_notification(manager.id, title, manager_msg, 'info', link='/manager/team')
+        if manager.email:
+            def _send_mgr():
+                send_email_notification(manager.email, title, manager_msg, manager_msg)
+            _with_locale(_send_mgr)
