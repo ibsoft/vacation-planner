@@ -18,6 +18,7 @@ class UserForm(FlaskForm):
     manager_id = SelectField(_l('Manager'), coerce=int, validators=[Optional()])
     vacation_days_per_year = IntegerField(_l('Vacation Days/Year'), default=20, validators=[NumberRange(min=0, max=365)])
     locale = SelectField(_l('Language'), choices=[('en', 'English'), ('el', 'Ελληνικά')], default='en')
+    email_locale = SelectField(_l('Email Language'), choices=[('', _l('Use system default')), ('en', 'English'), ('el', 'Ελληνικά')], default='')
     submit = SubmitField(_l('Save'))
 
 

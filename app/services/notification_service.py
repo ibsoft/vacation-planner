@@ -69,8 +69,10 @@ def _fmt_dates(request_obj):
             request_obj.end_date.strftime('%d/%m/%Y'))
 
 
-def _with_locale(func, *args, **kwargs):
-    locale = _get_email_locale()
+def _with_locale(func, locale=None, *args, **kwargs):
+    """Run func within a locale. If locale is None, use global email locale setting."""
+    if not locale:
+        locale = _get_email_locale()
     with force_locale(locale):
         return func(*args, **kwargs)
 
@@ -98,7 +100,7 @@ def notify_vacation_created(request_obj):
                               start=start_fmt, end=end_fmt,
                               url=url_for('manager.approve_request', req_id=request_obj.id, _external=True))
                 send_email_notification(manager.email, title, body_html, body_text)
-            _with_locale(_send)
+            _with_locale(_send, manager.email_locale if getattr(manager, 'email_locale', None) else None)
 
 
 def notify_vacation_approved(request_obj, approved_by):
@@ -115,7 +117,7 @@ def notify_vacation_approved(request_obj, approved_by):
             body_text = _('Your vacation from %(start)s to %(end)s has been approved.',
                           start=start_fmt, end=end_fmt)
             send_email_notification(user.email, title, body_html, body_text)
-        _with_locale(_send)
+        _with_locale(_send, user.email_locale if getattr(user, 'email_locale', None) else None)
 
 
 def notify_vacation_rejected(request_obj, approved_by, comment=None):
@@ -133,7 +135,7 @@ def notify_vacation_rejected(request_obj, approved_by, comment=None):
             if comment:
                 body_text += f'\n{_("Comment")}: {comment}'
             send_email_notification(user.email, title, body_html, body_text)
-        _with_locale(_send)
+        _with_locale(_send, user.email_locale if getattr(user, 'email_locale', None) else None)
 
 
 def notify_vacation_cancelled(request_obj):
@@ -150,7 +152,7 @@ def notify_vacation_cancelled(request_obj):
         if manager.email:
             def _send():
                 send_email_notification(manager.email, title, message, message)
-            _with_locale(_send)
+            _with_locale(_send, manager.email_locale if getattr(manager, 'email_locale', None) else None)
 
 
 def notify_vacation_cancelled_by_admin(request_obj, actor):
@@ -165,7 +167,7 @@ def notify_vacation_cancelled_by_admin(request_obj, actor):
     if user.email:
         def _send():
             send_email_notification(user.email, title, user_message, user_message)
-        _with_locale(_send)
+        _with_locale(_send, user.email_locale if getattr(user, 'email_locale', None) else None)
 
     if manager and manager.id != user.id:
         manager_message = _('%(name)s cancelled the vacation request for %(employee)s from %(start)s to %(end)s.',
@@ -176,7 +178,7 @@ def notify_vacation_cancelled_by_admin(request_obj, actor):
         if manager.email:
             def _send_manager():
                 send_email_notification(manager.email, title, manager_message, manager_message)
-            _with_locale(_send_manager)
+            _with_locale(_send_manager, manager.email_locale if getattr(manager, 'email_locale', None) else None)
 
 
 def notify_vacation_discussion(request_obj, actor):
@@ -191,7 +193,7 @@ def notify_vacation_discussion(request_obj, actor):
     if user.email:
         def _send():
             send_email_notification(user.email, title, user_message, user_message)
-        _with_locale(_send)
+        _with_locale(_send, user.email_locale if getattr(user, 'email_locale', None) else None)
 
     if manager and manager.id != user.id:
         manager_message = _('%(name)s marked the vacation request for %(employee)s from %(start)s to %(end)s as needing discussion.',
@@ -202,7 +204,7 @@ def notify_vacation_discussion(request_obj, actor):
         if manager.email:
             def _send_manager():
                 send_email_notification(manager.email, title, manager_message, manager_message)
-            _with_locale(_send_manager)
+            _with_locale(_send_manager, manager.email_locale if getattr(manager, 'email_locale', None) else None)
 
 
 def notify_manager_about_request(request_obj, title, message, type='info', link=None):
@@ -212,7 +214,7 @@ def notify_manager_about_request(request_obj, title, message, type='info', link=
         if manager.email:
             def _send():
                 send_email_notification(manager.email, title, message, message)
-            _with_locale(_send)
+            _with_locale(_send, manager.email_locale if getattr(manager, 'email_locale', None) else None)
 
 
 def notify_hr_assigned(request_obj, assigned_by):
@@ -229,7 +231,7 @@ def notify_hr_assigned(request_obj, assigned_by):
             body_text = _('A vacation from %(start)s to %(end)s has been assigned to you.',
                           start=start_fmt, end=end_fmt)
             send_email_notification(user.email, title, body_html, body_text)
-        _with_locale(_send)
+        _with_locale(_send, user.email_locale if getattr(user, 'email_locale', None) else None)
 
 
 def notify_status_pending(request_obj, actor):
@@ -248,7 +250,7 @@ def notify_status_pending(request_obj, actor):
             body_html = render_template('emails/status_pending.html', request=request_obj, actor=actor, user=user)
             body_text = user_msg
             send_email_notification(user.email, title, body_html, body_text)
-        _with_locale(_send_user)
+        _with_locale(_send_user, user.email_locale if getattr(user, 'email_locale', None) else None)
 
     if manager and manager.id != user.id:
         manager_msg = _('%(actor)s set the vacation request for %(employee)s from %(start)s to %(end)s to pending.',
@@ -259,4 +261,4 @@ def notify_status_pending(request_obj, actor):
         if manager.email:
             def _send_mgr():
                 send_email_notification(manager.email, title, manager_msg, manager_msg)
-            _with_locale(_send_mgr)
+            _with_locale(_send_mgr, manager.email_locale if getattr(manager, 'email_locale', None) else None)

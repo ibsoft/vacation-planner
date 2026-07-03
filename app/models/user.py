@@ -16,6 +16,7 @@ class User(UserMixin, db.Model):
     is_top_management = db.Column(db.Boolean, default=False)
     is_active = db.Column(db.Boolean, default=True)
     locale = db.Column(db.String(5), default='en')
+    email_locale = db.Column(db.String(5), nullable=True)
 
     department_id = db.Column(db.Integer, db.ForeignKey('departments.id'), nullable=True)
     manager_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)

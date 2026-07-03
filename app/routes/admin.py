@@ -83,6 +83,7 @@ def user_new():
             manager_id=form.manager_id.data if form.manager_id.data and form.manager_id.data != 0 else None,
             vacation_days_per_year=form.vacation_days_per_year.data,
             locale=form.locale.data,
+            email_locale=form.email_locale.data or None,
         )
         if form.password.data:
             user.set_password(form.password.data)
@@ -117,6 +118,7 @@ def user_edit(user_id):
         user.manager_id = form.manager_id.data if form.manager_id.data and form.manager_id.data != 0 else None
         user.vacation_days_per_year = form.vacation_days_per_year.data
         user.locale = form.locale.data
+        user.email_locale = form.email_locale.data or None
         if form.password.data:
             user.set_password(form.password.data)
         db.session.commit()
@@ -125,6 +127,7 @@ def user_edit(user_id):
         return redirect(url_for('admin.users'))
     form.department_id.data = user.department_id or 0
     form.manager_id.data = user.manager_id or 0
+    form.email_locale.data = user.email_locale or ''
     return render_template('admin/user_form.html', form=form, user=user, title=_('Edit User'))
 
 
