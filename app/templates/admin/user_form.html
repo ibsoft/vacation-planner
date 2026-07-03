@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="mb-0"><i class="fas fa-user-{% if user %}edit{% else %}plus{% endif %} me-2 text-primary"></i>{{ title }}</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Username') }}</label>
+                            {{ form.username(class="form-control" + (" is-invalid" if form.username.errors else "")) }}
+                            {% for error in form.username.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Display Name') }}</label>
+                            {{ form.display_name(class="form-control") }}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">{{ _('Email') }}</label>
+                            {{ form.email(class="form-control" + (" is-invalid" if form.email.errors else "")) }}
+                            {% for error in form.email.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Password') }} {% if user %}<small class="text-muted">({{ _('leave blank to keep current') }})</small>{% endif %}</label>
+                            {{ form.password(class="form-control") }}
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Department') }}</label>
+                            {{ form.department_id(class="form-select") }}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">{{ _('Manager') }}</label>
+                            {{ form.manager_id(class="form-select") }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label class="form-label">{{ _('Vacation Days/Year') }}</label>
+                            {{ form.vacation_days_per_year(class="form-control" + (" is-invalid" if form.vacation_days_per_year.errors else "")) }}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">{{ _('Language') }}</label>
+                            {{ form.locale(class="form-select") }}
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="form-check form-switch form-check-inline">
+                                {{ form.is_admin(class="form-check-input") }}
+                                <label class="form-check-label">{{ _('Admin') }}</label>
+                            </div>
+                            <div class="form-check form-switch form-check-inline">
+                                {{ form.is_hr(class="form-check-input") }}
+                                <label class="form-check-label">{{ _('HR') }}</label>
+                            </div>
+                            <div class="form-check form-switch form-check-inline">
+                                {{ form.is_top_management(class="form-check-input") }}
+                                <label class="form-check-label">{{ _('Top Management') }}</label>
+                            </div>
+                            <div class="form-check form-switch form-check-inline">
+                                {{ form.is_active(class="form-check-input") }}
+                                <label class="form-check-label">{{ _('Active') }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex gap-2">
+                            {{ form.submit(class="btn btn-primary") }}
+                            <a href="{{ url_for('admin.users') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

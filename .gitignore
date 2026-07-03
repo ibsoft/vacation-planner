@@ -65,6 +65,30 @@ db.sqlite3-journal
 instance/
 .webassets-cache
 
+# Uploads
+app/static/uploads/**
+!app/static/uploads/.gitkeep
+
+# Database backups
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+!logs/.gitkeep
+
+# Sensitive data / keys
+*.key
+*.pem
+*.cer
+*.crt
+secrets.*
+config_local.py
+local_config.py
+*.secret
+
 # Scrapy stuff:
 .scrapy
 
@@ -150,6 +174,8 @@ activemq-data/
 # Environments
 .env
 .envrc
+.env.*
+.flaskenv
 .venv
 env/
 venv/

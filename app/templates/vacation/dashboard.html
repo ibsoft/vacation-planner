@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Dashboard') }} - {{ _('Vacation Planner') }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-home me-2"></i>{{ _('Dashboard') }}</h2>
+        <p class="text-muted">{{ _('Welcome back, %(name)s!', name=current_user.display_name or current_user.username) }}</p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4 mb-3">
+        <div class="card border-0 shadow-sm bg-gradient-primary text-white rounded-4">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-sun fa-3x mb-3"></i>
+                <h3 class="display-4 fw-bold">{{ remaining }}</h3>
+                <p class="mb-0">{{ _('Remaining Days') }}</p>
+                <small>{{ _('of') }} {{ total }} {{ _('per year') }}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card border-0 shadow-sm bg-gradient-success text-white rounded-4">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-check-circle fa-3x mb-3"></i>
+                <h3 class="display-4 fw-bold">{{ upcoming|selectattr('status', 'equalto', 'approved')|list|length }}</h3>
+                <p class="mb-0">{{ _('Approved') }}</p>
+                <small>{{ _('upcoming vacations') }}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card border-0 shadow-sm bg-gradient-warning text-white rounded-4">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-clock fa-3x mb-3"></i>
+                <h3 class="display-4 fw-bold">{{ upcoming|selectattr('status', 'equalto', 'pending')|list|length }}</h3>
+                <p class="mb-0">{{ _('Pending') }}</p>
+                <small>{{ _('awaiting approval') }}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8 mb-4">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="card-title mb-0"><i class="fas fa-calendar-alt me-2 text-primary"></i>{{ _('Upcoming Vacations') }}</h5>
+            </div>
+            <div class="card-body">
+                {% if upcoming %}
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>{{ _('Dates') }}</th>
+                                <th>{{ _('Days') }}</th>
+                                <th>{{ _('Status') }}</th>
+                                <th>{{ _('Type') }}</th>
+                                <th>{{ _('Actions') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for req in upcoming %}
+                            <tr>
+                                <td>
+                                    <strong>{{ req.start_date.strftime('%d/%m/%Y') }}</strong>
+                                    <i class="fas fa-arrow-right mx-2 text-muted"></i>
+                                    <strong>{{ req.end_date.strftime('%d/%m/%Y') }}</strong>
+                                </td>
+                                <td><span class="badge bg-secondary">{{ req.days_count }}</span></td>
+                                <td>
+                                    {% if req.status == 'approved' %}
+                                    <span class="badge bg-success"><i class="fas fa-check me-1"></i>{{ _('Approved') }}</span>
+                                    {% elif req.status == 'pending' %}
+                                    <span class="badge bg-warning text-dark"><i class="fas fa-clock me-1"></i>{{ _('Pending') }}</span>
+                                    {% elif req.status == 'hr_assigned' %}
+                                    <span class="badge bg-info"><i class="fas fa-user-tie me-1"></i>{{ _('HR Assigned') }}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if req.request_type == 'hr_assigned' %}
+                                    <small class="text-muted">{{ req.cause.name if req.cause else _('HR Assigned') }}</small>
+                                    {% else %}
+                                    <small class="text-muted">{{ _('User Request') }}</small>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if req.status == 'pending' %}
+                                    <form method="POST" action="{{ url_for('vacation.cancel_request', req_id=req.id) }}" class="d-inline">
+                                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="{{ _('Cancel this request?') }}">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </form>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-calendar-plus fa-3x mb-3"></i>
+                    <p>{{ _('No upcoming vacations.') }}</p>
+                    <a href="{{ url_for('vacation.new_request') }}" class="btn btn-primary">
+                        <i class="fas fa-plus me-1"></i>{{ _('Request Vacation') }}
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 mb-3">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="card-title mb-0"><i class="fas fa-history me-2 text-secondary"></i>{{ _('Recent History') }}</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="list-group list-group-flush">
+                    {% for req in past[:5] %}
+                    <div class="list-group-item border-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <small>{{ req.start_date.strftime('%d/%m') }} - {{ req.end_date.strftime('%d/%m') }}</small>
+                            <small>
+                                {% if req.status == 'approved' %}
+                                <span class="text-success"><i class="fas fa-check"></i></span>
+                                {% elif req.status == 'rejected' %}
+                                <span class="text-danger"><i class="fas fa-times"></i></span>
+                                {% elif req.status == 'cancelled' %}
+                                <span class="text-secondary"><i class="fas fa-ban"></i></span>
+                                {% endif %}
+                            </small>
+                        </div>
+                        <small class="text-muted">{{ req.days_count }} {{ _('days') }}</small>
+                    </div>
+                    {% else %}
+                    <div class="list-group-item text-center text-muted py-3">
+                        <small>{{ _('No history yet') }}</small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {% if team_vacations %}
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="card-title mb-0"><i class="fas fa-users me-2 text-info"></i>{{ _('Team Vacations') }}</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="list-group list-group-flush">
+                    {% for req in team_vacations[:5] %}
+                    <div class="list-group-item border-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <strong>{{ req.user.display_name or req.user.username }}</strong>
+                            <small>
+                                {% if req.status == 'approved' %}
+                                <span class="badge bg-success">{{ _('Approved') }}</span>
+                                {% elif req.status == 'pending' %}
+                                <span class="badge bg-warning text-dark">{{ _('Pending') }}</span>
+                                {% endif %}
+                            </small>
+                        </div>
+                        <small class="text-muted">{{ req.start_date.strftime('%d/%m') }} - {{ req.end_date.strftime('%d/%m') }}</small>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="card-footer bg-white border-0 text-center">
+                    <a href="{{ url_for('vacation.team_calendar') }}" class="btn btn-sm btn-outline-info">
+                        <i class="fas fa-calendar me-1"></i>{{ _('View All') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

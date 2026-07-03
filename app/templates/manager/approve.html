@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Review Vacation Request') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="mb-0"><i class="fas fa-clipboard-check me-2 text-primary"></i>{{ _('Review Vacation Request') }}</h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label class="text-muted small">{{ _('Employee') }}</label>
+                            <p class="fw-bold mb-0">{{ req.user.display_name or req.user.username }}</p>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="text-muted small">{{ _('Department') }}</label>
+                            <p class="fw-bold mb-0">{{ req.user.department.name if req.user.department else '-' }}</p>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="text-muted small">{{ _('Start Date') }}</label>
+                            <p class="fw-bold mb-0">{{ req.start_date.strftime('%A, %d %B %Y') }}</p>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="text-muted small">{{ _('End Date') }}</label>
+                            <p class="fw-bold mb-0">{{ req.end_date.strftime('%A, %d %B %Y') }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label class="text-muted small">{{ _('Working Days') }}</label>
+                            <p class="fw-bold mb-0">{{ req.days_count }}</p>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="text-muted small">{{ _('Remaining Balance') }}</label>
+                            <p class="fw-bold mb-0">{{ req.user.remaining_days }}/{{ req.user.vacation_days_per_year }}</p>
+                        </div>
+                    </div>
+                    {% if req.reason %}
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="text-muted small">{{ _('Reason') }}</label>
+                            <p class="mb-0">{{ req.reason }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                {% if req.change_status == 'pending' %}
+                <div class="alert alert-info rounded-4">
+                    <h5 class="alert-heading"><i class="fas fa-calendar-alt me-2"></i>{{ _('Change Request Pending') }}</h5>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="text-muted small">{{ _('Original Dates') }}</label>
+                            <p class="fw-bold mb-0 text-decoration-line-through">
+                                {{ req.start_date.strftime('%A, %d %B %Y') }} <i class="fas fa-arrow-right mx-1"></i> {{ req.end_date.strftime('%A, %d %B %Y') }}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="text-muted small">{{ _('Requested New Dates') }}</label>
+                            <p class="fw-bold mb-0 text-success">
+                                {{ req.change_requested_start.strftime('%A, %d %B %Y') }} <i class="fas fa-arrow-right mx-1"></i> {{ req.change_requested_end.strftime('%A, %d %B %Y') }}
+                            </p>
+                        </div>
+                    </div>
+                    {% if req.change_reason %}
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <label class="text-muted small">{{ _('Reason for Change') }}</label>
+                            <p class="mb-0">{{ req.change_reason }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="d-flex gap-2 mb-4">
+                    <form method="POST" action="{{ url_for('manager.change_response', req_id=req.id) }}" class="d-inline">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="action" value="approved">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="fas fa-check me-1"></i>{{ _('Approve Change') }}
+                        </button>
+                    </form>
+                    <form method="POST" action="{{ url_for('manager.change_response', req_id=req.id) }}" class="d-inline">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="action" value="rejected">
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            <i class="fas fa-times me-1"></i>{{ _('Reject Change') }}
+                        </button>
+                    </form>
+                </div>
+                <hr>
+                {% endif %}
+
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label class="form-label">{{ _('Decision') }}</label>
+                            <div class="d-flex gap-3">
+                                {% for subfield in form.action %}
+                                <div class="form-check form-check-inline">
+                                    {{ subfield(class="form-check-input") }}
+                                    <label class="form-check-label">
+                                        {% if subfield.data == 'approved' %}
+                                        <span class="text-success"><i class="fas fa-check-circle me-1"></i>{{ subfield.label.text }}</span>
+                                        {% else %}
+                                        <span class="text-danger"><i class="fas fa-times-circle me-1"></i>{{ subfield.label.text }}</span>
+                                        {% endif %}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% for error in form.action.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label class="form-label">{{ _('Comment (optional)') }}</label>
+                            {{ form.comment(class="form-control", rows=3, placeholder=_("Add a comment for the employee...")) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex gap-2">
+                            {{ form.submit(class="btn btn-primary btn-lg") }}
+                            <a href="{{ url_for('manager.dashboard') }}" class="btn btn-outline-secondary">{{ _('Back') }}</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

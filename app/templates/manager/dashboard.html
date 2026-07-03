@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Management Dashboard') }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12 d-flex justify-content-between align-items-center flex-wrap">
+        <h2><i class="fas fa-tasks me-2"></i>{{ _('Management Dashboard') }}</h2>
+        <div>
+            <a href="{{ url_for('manager.export') }}" class="btn btn-success">
+                <i class="fas fa-file-excel me-1"></i>{{ _('Export to Excel') }}
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-warning text-dark h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-clock fa-3x mb-3"></i>
+                <h3 class="fw-bold">{{ pending|length }}</h3>
+                <p class="mb-0">{{ _('Pending Approvals') }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-info text-white h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h3 class="fw-bold">{{ team_members|length }}</h3>
+                <p class="mb-0">{{ _('Team Members') }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-primary text-white h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-exchange-alt fa-3x mb-3"></i>
+                <h3 class="fw-bold">{{ change_requests|length }}</h3>
+                <p class="mb-0">{{ _('Change Requests') }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8 mb-4">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0"><i class="fas fa-clock me-2 text-warning"></i>{{ _('Pending Approvals') }}</h5>
+            </div>
+            <div class="card-body">
+                {% if pending %}
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>{{ _('Employee') }}</th>
+                                <th>{{ _('Period') }}</th>
+                                <th>{{ _('Days') }}</th>
+                                <th>{{ _('Reason') }}</th>
+                                <th>{{ _('Actions') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for req in pending %}
+                            <tr>
+                                <td>
+                                    <strong>{{ req.user.display_name or req.user.username }}</strong>
+                                    <br><small class="text-muted">{{ req.user.department.name if req.user.department else '' }}</small>
+                                </td>
+                                <td>
+                                    {{ req.start_date.strftime('%d/%m/%Y') }}
+                                    <i class="fas fa-arrow-right mx-1 text-muted"></i>
+                                    {{ req.end_date.strftime('%d/%m/%Y') }}
+                                </td>
+                                <td><span class="badge bg-secondary">{{ req.days_count }}</span></td>
+                                <td><small class="text-muted">{{ req.reason or '-' }}</small></td>
+                                <td>
+                                    <a href="{{ url_for('manager.approve_request', req_id=req.id) }}" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-clipboard-check me-1"></i>{{ _('Review') }}
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="text-center py-5 text-muted">
+                    <i class="fas fa-check-circle fa-4x mb-3 text-success"></i>
+                    <p class="lead">{{ _('No pending approvals!') }}</p>
+                    <p>{{ _('All vacation requests have been processed.') }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0"><i class="fas fa-exchange-alt me-2 text-primary"></i>{{ _('Change Requests') }}</h5>
+            </div>
+            <div class="card-body p-0">
+                {% if change_requests %}
+                <div class="list-group list-group-flush">
+                    {% for req in change_requests %}
+                    <div class="list-group-item border-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <strong>{{ req.user.display_name or req.user.username }}</strong>
+                            <a href="{{ url_for('manager.approve_request', req_id=req.id) }}" class="btn btn-sm btn-outline-primary">
+                                {{ _('Review') }}
+                            </a>
+                        </div>
+                        <small class="text-muted">
+                            {{ req.start_date.strftime('%d/%m/%Y') }} <i class="fas fa-arrow-right"></i> {{ req.end_date.strftime('%d/%m/%Y') }}
+                            <i class="fas fa-long-arrow-alt-right mx-2"></i>
+                            <span class="text-success">{{ req.change_requested_start.strftime('%d/%m/%Y') }} <i class="fas fa-arrow-right"></i> {{ req.change_requested_end.strftime('%d/%m/%Y') }}</span>
+                        </small>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-check-circle fa-3x mb-2 text-success"></i>
+                    <p>{{ _('No change requests pending.') }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="card border-0 shadow-sm rounded-4 mt-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0"><i class="fas fa-users me-2 text-info"></i>{{ _('My Team') }}</h5>
+            </div>
+            <div class="card-body p-0">
+                <div class="list-group list-group-flush">
+                    {% for member in team_members %}
+                    <div class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>{{ member.display_name or member.username }}</strong>
+                            <br><small class="text-muted">{{ member.department.name if member.department else '' }}</small>
+                        </div>
+                        <span class="badge bg-primary rounded-pill">{{ member.remaining_days }}/{{ member.vacation_days_per_year }}</span>
+                    </div>
+                    {% else %}
+                    <div class="list-group-item text-center py-4 text-muted">
+                        <i class="fas fa-user-plus fa-3x mb-2"></i>
+                        <p>{{ _('No team members assigned.') }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

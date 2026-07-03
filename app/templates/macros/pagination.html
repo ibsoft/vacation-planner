@@ -1,0 +1,39 @@
+{% macro render_pagination(pagination, endpoint) %}
+{% if pagination.pages > 1 %}
+{% set args = request.args.to_dict() %}
+{% if 'page' in args %}{% set _ = args.pop('page') %}{% endif %}
+<nav>
+    <ul class="pagination pagination-sm justify-content-center mb-0 mt-3">
+        <li class="page-item {{ 'disabled' if not pagination.has_prev }}">
+            <a class="page-link" href="{{ url_for(endpoint, page=1, **args) if pagination.has_prev else '#' }}">
+                <i class="fas fa-angle-double-left"></i>
+            </a>
+        </li>
+        <li class="page-item {{ 'disabled' if not pagination.has_prev }}">
+            <a class="page-link" href="{{ url_for(endpoint, page=pagination.prev_num, **args) if pagination.has_prev else '#' }}">
+                <i class="fas fa-angle-left"></i>
+            </a>
+        </li>
+        {% for p in pagination.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+            {% if p %}
+            <li class="page-item {{ 'active' if p == pagination.page }}">
+                <a class="page-link" href="{{ url_for(endpoint, page=p, **args) }}">{{ p }}</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">…</span></li>
+            {% endif %}
+        {% endfor %}
+        <li class="page-item {{ 'disabled' if not pagination.has_next }}">
+            <a class="page-link" href="{{ url_for(endpoint, page=pagination.next_num, **args) if pagination.has_next else '#' }}">
+                <i class="fas fa-angle-right"></i>
+            </a>
+        </li>
+        <li class="page-item {{ 'disabled' if not pagination.has_next }}">
+            <a class="page-link" href="{{ url_for(endpoint, page=pagination.pages, **args) if pagination.has_next else '#' }}">
+                <i class="fas fa-angle-double-right"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Request Vacation Date Change') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="mb-0"><i class="fas fa-calendar-alt me-2 text-warning"></i>{{ _('Request Vacation Date Change') }}</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info rounded-4 mb-4">
+                    <h6 class="alert-heading">{{ _('Original Request') }}</h6>
+                    <p class="mb-1">
+                        <strong>{{ _('Dates') }}:</strong>
+                        {{ req.start_date.strftime('%A, %d %B %Y') }} <i class="fas fa-arrow-right mx-1"></i> {{ req.end_date.strftime('%A, %d %B %Y') }}
+                    </p>
+                    <p class="mb-0">
+                        <strong>{{ _('Status') }}:</strong>
+                        {% if req.status == 'approved' %}
+                        <span class="badge bg-success">{{ _('Approved') }}</span>
+                        {% elif req.status == 'pending' %}
+                        <span class="badge bg-warning text-dark">{{ _('Pending') }}</span>
+                        {% endif %}
+                    </p>
+                </div>
+
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">{{ form.start_date.label.text }}</label>
+                            {{ form.start_date(class="form-control" + (" is-invalid" if form.start_date.errors else "")) }}
+                            {% for error in form.start_date.errors %}
+                            <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">{{ form.end_date.label.text }}</label>
+                            {{ form.end_date(class="form-control" + (" is-invalid" if form.end_date.errors else "")) }}
+                            {% for error in form.end_date.errors %}
+                            <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label class="form-label">{{ form.change_reason.label.text }}</label>
+                            {{ form.change_reason(class="form-control" + (" is-invalid" if form.change_reason.errors else ""), rows=4, placeholder=_("Explain why you need to change the dates...")) }}
+                            {% for error in form.change_reason.errors %}
+                            <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex gap-2">
+                            {{ form.submit(class="btn btn-warning btn-lg") }}
+                            <a href="{{ url_for('vacation.my_vacations') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

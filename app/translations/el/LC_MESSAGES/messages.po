@@ -1,0 +1,1973 @@
+# Greek translations
+# Copyright (C) 2025
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Vacation Planner 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-03 08:32+0300\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language: el\n"
+"Language-Team: Greek\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/__init__.py:35
+msgid "You have no subordinates to manage."
+msgstr "Δεν έχετε υφισταμένους για διαχείριση."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:68
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:69
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:106
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:107
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:168
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:191
+msgid "None"
+msgstr "Κανένα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:72
+msgid "Username already exists."
+msgstr "Το όνομα χρήστη υπάρχει ήδη."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:73
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:94
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:10
+msgid "New User"
+msgstr "Νέος Χρήστης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:92
+msgid "User created successfully."
+msgstr "Ο χρήστης δημιουργήθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:103
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:137
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:471
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:48
+msgid "User not found."
+msgstr "Ο χρήστης δεν βρέθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:124
+msgid "User updated successfully."
+msgstr "Ο χρήστης ενημερώθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:128
+msgid "Edit User"
+msgstr "Επεξεργασία Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:140
+msgid "You cannot disable yourself."
+msgstr "Δεν μπορείτε να απενεργοποιήσετε τον εαυτό σας."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:145
+#, python-format
+msgid "User %(name)s %(status)s."
+msgstr "Χρήστης %(name)s %(status)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:145
+#, fuzzy
+msgid "activated"
+msgstr "Ενεργοποίηση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:145
+#, fuzzy
+msgid "deactivated"
+msgstr "Απενεργοποίηση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:177
+msgid "Department created successfully."
+msgstr "Το τμήμα δημιουργήθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:179
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:10
+msgid "New Department"
+msgstr "Νέο Τμήμα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:188
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:452
+#, fuzzy
+msgid "Department not found."
+msgstr "Χαρακτηριστικό Τμήματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:198
+msgid "Department updated successfully."
+msgstr "Το τμήμα ενημερώθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:201
+msgid "Edit Department"
+msgstr "Επεξεργασία Τμήματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:220
+#, fuzzy
+msgid "LDAP settings saved successfully."
+msgstr "Η σύνδεση LDAP ήταν επιτυχής!"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:266
+msgid "Email settings saved successfully."
+msgstr "Οι ρυθμίσεις email αποθηκεύτηκαν επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:297
+#, fuzzy
+msgid "Test Email from Vacation Planner"
+msgstr "Προγραμματισμός Αδειών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:298
+msgid "This is a test email to verify SMTP configuration."
+msgstr "Αυτό είναι ένα δοκιμαστικό email για επαλήθευση των ρυθμίσεων SMTP."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:300
+#, python-format
+msgid "Test email sent to %(email)s."
+msgstr "Το δοκιμαστικό email στάλθηκε στο %(email)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:302
+#, python-format
+msgid "Failed to send test email: %(error)s"
+msgstr "Αποτυχία αποστολής δοκιμαστικού email: %(error)s"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:314
+msgid "LDAP connection successful!"
+msgstr "Η σύνδεση LDAP ήταν επιτυχής!"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:316
+msgid "LDAP connection failed."
+msgstr "Η σύνδεση LDAP απέτυχε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:318
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:334
+#, fuzzy, python-format
+msgid "LDAP connection error: %(error)s"
+msgstr "Η σύνδεση LDAP απέτυχε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:332
+msgid "No users found in Active Directory. Check your LDAP settings."
+msgstr "Δεν βρέθηκαν χρήστες στο Active Directory. Ελέγξτε τις ρυθμίσεις LDAP."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:339
+msgid "No users selected. Please check the users you want to import."
+msgstr "Δεν επιλέχθηκαν χρήστες. Παρακαλώ επιλέξτε τους χρήστες για εισαγωγή."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:370
+#, python-format
+msgid "Import complete: %(new)s new users added, %(up)s updated."
+msgstr "Εισαγωγή ολοκληρώθηκε: %(new)s νέοι χρήστες, %(up)s ενημερώθηκαν."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:406
+msgid "Vacation cause created successfully."
+msgstr "Η αιτία άδειας δημιουργήθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:408
+msgid "New Vacation Cause"
+msgstr "Νέα Αιτία Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:417
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:437
+msgid "Cause not found."
+msgstr "Η αιτία δεν βρέθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:426
+msgid "Vacation cause updated successfully."
+msgstr "Η αιτία άδειας ενημερώθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:428
+msgid "Edit Vacation Cause"
+msgstr "Επεξεργασία Αιτίας Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:442
+msgid "Vacation cause deleted successfully."
+msgstr "Η αιτία άδειας διαγράφηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:456
+msgid "Cannot delete department with active members."
+msgstr "Δεν είναι δυνατή η διαγραφή τμήματος με ενεργά μέλη."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:461
+msgid "Department deleted successfully."
+msgstr "Το τμήμα διαγράφηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:474
+msgid "You cannot delete yourself."
+msgstr "Δεν μπορείτε να διαγράψετε τον εαυτό σας."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:479
+msgid "User deleted successfully."
+msgstr "Ο χρήστης διαγράφηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:503
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:565
+msgid "A holiday on this date already exists."
+msgstr "Υπάρχει ήδη αργία για αυτήν την ημερομηνία."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:504
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:515
+msgid "New Holiday"
+msgstr "Νέα Αργία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:513
+msgid "Holiday added successfully."
+msgstr "Η αργία προστέθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:548
+#, python-format
+msgid "Imported %(imported)s holidays, %(skipped)s skipped."
+msgstr "Εισαγωγή %(imported)s αργιών, %(skipped)s παραλείφθηκαν."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:559
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:583
+msgid "Holiday not found."
+msgstr "Η αργία δεν βρέθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:566
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:574
+msgid "Edit Holiday"
+msgstr "Επεξεργασία Αργίας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:572
+msgid "Holiday updated successfully."
+msgstr "Η αργία ενημερώθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:588
+#, fuzzy
+msgid "Holiday deleted successfully."
+msgstr "Η σύνδεση LDAP ήταν επιτυχής!"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:43
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:8
+#, python-format
+msgid "Welcome back, %(name)s!"
+msgstr "Καλώς ήρθες, %(name)s!"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:50
+msgid "Your account is disabled. Contact your administrator."
+msgstr "Ο λογαριασμός σας είναι απενεργοποιημένος. Επικοινωνήστε με τον διαχειριστή."
+"Ο λογαριασμός σας είναι απενεργοποιημένος. Επικοινωνήστε με τον "
+"διαχειριστή."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:52
+msgid "Invalid username or password."
+msgstr "Λάθος όνομα χρήστη ή κωδικός."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:62
+msgid "You have been logged out."
+msgstr "Αποσυνδεθήκατε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:97
+msgid "Profile updated successfully."
+msgstr "Το προφίλ ενημερώθηκε επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:55
+#, fuzzy, python-format
+msgid "Vacation days updated for %(name)s."
+msgstr "Ορισμός Ημερών Άδειας για %(name)s"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:73
+msgid "Invalid selection."
+msgstr "Μη έγκυρη επιλογή."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:77
+#, fuzzy
+msgid "Selected range has no working days."
+msgstr "Το επιλεγμένο διάστημα δεν έχει εργάσιμες ημέρες."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:80
+#, fuzzy
+msgid "User does not have enough remaining vacation days."
+msgstr "Υπόλοιπες ημέρες αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:99
+#, python-format
+msgid "Vacation assigned to %(name)s successfully."
+msgstr "Άδεια ανατέθηκε στον %(name)s επιτυχώς."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:68
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:101
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:122
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:141
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:202
+#, fuzzy
+msgid "Request not found."
+msgstr "Αίτημα %(action)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:72
+msgid "You are not authorized to approve this request."
+msgstr "Δεν έχετε εξουσιοδότηση να εγκρίνετε αυτό το αίτημα."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:75
+msgid "This request has already been processed."
+msgstr "Αυτό το αίτημα έχει ήδη υποβληθεί σε επεξεργασία."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:90
+#, python-format
+msgid "Request %(action)s."
+msgstr "Αίτημα %(action)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:105
+msgid "You are not authorized to respond to this change request."
+msgstr "Δεν έχετε εξουσιοδότηση να απαντήσετε σε αυτό το αίτημα αλλαγής."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:108
+msgid "This change request has already been processed."
+msgstr "Αυτό το αίτημα αλλαγής έχει ήδη υποβληθεί σε επεξεργασία."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:112
+#, fuzzy
+msgid "Invalid action."
+msgstr "Όλες οι Άδειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:129
+msgid "Change Request Approved"
+msgstr "Το Αίτημα Αλλαγής Εγκρίθηκε"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:130
+#, python-format
+msgid ""
+"Your request to change your vacation from %(orig_start)s to %(orig_end)s "
+"has been approved."
+msgstr "Το αίτημά σας για αλλαγή άδειας από %(orig_start)s έως %(orig_end)s εγκρίθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:136
+msgid "Change request approved and vacation dates updated."
+msgstr "Το αίτημα αλλαγής εγκρίθηκε και οι ημερομηνίες άδειας ενημερώθηκαν."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:146
+msgid "Change Request Rejected"
+msgstr "Το Αίτημα Αλλαγής Απορρίφθηκε"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:147
+msgid "Your request to change your vacation dates has been rejected."
+msgstr "Το αίτημά σας για αλλαγή ημερομηνιών άδειας απορρίφθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:151
+msgid "Change request rejected."
+msgstr "Το αίτημα αλλαγής απορρίφθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:170
+msgid "No approved vacations to export."
+msgstr "Δεν υπάρχουν εγκεκριμένες άδειες για εξαγωγή."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:53
+msgid "Other (write custom)"
+msgstr "Άλλο (γράψτε κάτι δικό σας)"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:56
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:226
+msgid "Please fix the errors below."
+msgstr "Παρακαλώ διορθώστε τα σφάλματα παρακάτω."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:59
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:152
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:230
+msgid "End date must be after start date."
+msgstr "Η ημερομηνία λήξης πρέπει να είναι μετά την έναρξη."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:63
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:156
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:235
+msgid "Selected range has no working days (weekends/holidays)."
+msgstr "Το επιλεγμένο διάστημα δεν έχει εργάσιμες ημέρες."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:159
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:240
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:244
+msgid "Insufficient vacation days remaining."
+msgstr "Ανεπαρκείς ημέρες αδείας."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:75
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:169
+msgid "You already have a vacation request overlapping these dates."
+msgstr "Υπάρχει ήδη αίτημα άδειας για αυτές τις ημερομηνίες."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:79
+msgid "Please provide a custom reason."
+msgstr "Παρακαλώ δώστε μια προσαρμοσμένη αιτιολογία."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:100
+msgid "Vacation request submitted for approval."
+msgstr "Το αίτημα άδειας υποβλήθηκε για έγκριση."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:125
+msgid "Only pending requests can be cancelled."
+msgstr "Μόνο αιτήματα σε αναμονή μπορούν να ακυρωθούν."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:132
+msgid "Vacation request cancelled."
+msgstr "Το αίτημα άδειας ακυρώθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:144
+#, fuzzy
+msgid "Only pending or approved vacations can be changed."
+msgstr "Μόνο αιτήματα σε αναμονή μπορούν να ακυρωθούν."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:147
+msgid "HR-assigned vacations cannot be changed."
+msgstr "Οι άδειες που ανατέθηκαν από ΔΑΔ δεν μπορούν να αλλάξουν."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:182
+#, fuzzy
+msgid "Vacation Change Request"
+msgstr "Νέο Αίτημα Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:183
+#, python-format
+msgid ""
+"%(name)s requested a change to their vacation from %(orig_start)s to "
+"%(orig_end)s: new dates %(new_start)s to %(new_end)s."
+msgstr "Ο/Η %(name)s ζήτησε αλλαγή άδειας από %(orig_start)s έως %(orig_end)s: νέες ημερομηνίες %(new_start)s έως %(new_end)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:192
+#, fuzzy
+msgid "Change request submitted for approval."
+msgstr "Το αίτημα άδειας υποβλήθηκε για έγκριση."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:219
+msgid "You are not allowed to edit this request."
+msgstr "Δεν επιτρέπεται η επεξεργασία αυτού του αιτήματος."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:255
+msgid "This period overlaps with an existing vacation request."
+msgstr "Αυτή η περίοδος αλληλεπικαλύπτεται με υπάρχον αίτημα άδειας."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:278
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:292
+#, fuzzy
+msgid "Vacation Dates Edited"
+msgstr "Ημέρες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:279
+#, python-format
+msgid ""
+"%(name)s edited their vacation request #%(req_id)s from "
+"%(old_start)s–%(old_end)s to %(new_start)s–%(new_end)s."
+msgstr "Ο/Η %(name)s επεξεργάστηκε το αίτημα άδειας #%(req_id)s από %(old_start)s–%(old_end)s σε %(new_start)s–%(new_end)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:293
+#, python-format
+msgid ""
+"Your vacation request #%(req_id)s has been edited by %(editor)s from "
+"%(old_start)s–%(old_end)s to %(new_start)s–%(new_end)s."
+msgstr "Το αίτημα άδειας #%(req_id)s επεξεργάστηκε από %(editor)s από %(old_start)s–%(old_end)s σε %(new_start)s–%(new_end)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:304
+#, fuzzy
+msgid "Vacation dates updated successfully."
+msgstr "Το αίτημα άδειας ακυρώθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:51
+msgid "Vacation Plan"
+msgstr "Πλάνο Αδειών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:54
+#, fuzzy
+msgid "Vacation Plan Report"
+msgstr "Προγραμματισμός Αδειών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:60
+#, python-format
+msgid "Generated on: %(date)s"
+msgstr "Δημιουργήθηκε στις: %(date)s"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:43
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:54
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:15
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:25
+msgid "Employee"
+msgstr "Υπάλληλος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:36
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:44
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:20
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:112
+#, fuzzy
+msgid "Department"
+msgstr "Τμήματα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:48
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:30
+msgid "Start Date"
+msgstr "Ημερομηνία Έναρξης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:37
+msgid "End Date"
+msgstr "Ημερομηνία Λήξης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:46
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:56
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:60
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:49
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:114
+msgid "Days"
+msgstr "Ημέρες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:47
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:60
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:51
+msgid "Type"
+msgstr "Τύπος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:63
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:48
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:57
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:59
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:35
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:50
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:115
+msgid "Status"
+msgstr "Κατάσταση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+#, fuzzy
+msgid "Cause/Reason"
+msgstr "Αιτιολογία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:82
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:73
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:53
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:79
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:84
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:29
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:76
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:106
+msgid "HR Assigned"
+msgstr "Ανάθεση από ΔΑΔ"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:82
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:47
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:86
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:83
+msgid "User Request"
+msgstr "Αίτημα Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:93
+#, fuzzy
+msgid "TOTAL"
+msgstr "Σύνολο Χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:110
+msgid "AVERAGE"
+msgstr "ΜΕΣΟΣ ΟΡΟΣ"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:82
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:5
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:18
+msgid "New Vacation Request"
+msgstr "Νέο Αίτημα Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:83
+#, python-format
+msgid "%(name)s submitted a vacation request from %(start)s to %(end)s."
+msgstr "Ο/Η %(name)s υπέβαλε αίτημα άδειας από %(start)s έως %(end)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:93
+#, python-format
+msgid ""
+"%(name)s submitted a vacation request from %(start)s to %(end)s.\n"
+"\n"
+"Review at: %(url)s"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:104
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:5
+#, fuzzy
+msgid "Vacation Approved"
+msgstr "αναμονή έγκρισης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:105
+#, python-format
+msgid "Your vacation request from %(start)s to %(end)s has been approved."
+msgstr "Το αίτημα άδειάς σας από %(start)s έως %(end)s εγκρίθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:113
+#, python-format
+msgid "Your vacation from %(start)s to %(end)s has been approved."
+msgstr "Η άδειά σας από %(start)s έως %(end)s εγκρίθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:121
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:5
+#, fuzzy
+msgid "Vacation Rejected"
+msgstr "Νέο Αίτημα Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:122
+#, python-format
+msgid "Your vacation request from %(start)s to %(end)s has been rejected."
+msgstr "Το αίτημα άδειάς σας από %(start)s έως %(end)s απορρίφθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:130
+#, python-format
+msgid "Your vacation from %(start)s to %(end)s has been rejected."
+msgstr "Η άδειά σας από %(start)s έως %(end)s απορρίφθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:132
+msgid "Comment"
+msgstr "Σχόλιο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:141
+#, fuzzy
+msgid "Vacation Cancelled"
+msgstr "Το αίτημα άδειας ακυρώθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:142
+#, python-format
+msgid "%(name)s cancelled their vacation request from %(start)s to %(end)s."
+msgstr "Ο/Η %(name)s ακύρωσε το αίτημα άδειας από %(start)s έως %(end)s."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:156
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:5
+#, fuzzy
+msgid "Vacation Assigned"
+msgstr "Αιτίες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:157
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:165
+#, python-format
+msgid "A vacation from %(start)s to %(end)s has been assigned to you."
+msgstr "Μια άδεια από %(start)s έως %(end)s σας ανατέθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:20
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:178
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:2
+msgid "Vacation Planner"
+msgstr "Προγραμματισμός Αδειών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:29
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:7
+msgid "Dashboard"
+msgstr "Πίνακας Ελέγχου"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:34
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:8
+msgid "My Vacations"
+msgstr "Οι Άδειές Μου"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:39
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:10
+msgid "New Request"
+msgstr "Νέο Αίτημα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:44
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:16
+msgid "Team Calendar"
+msgstr "Ημερολόγιο Ομάδας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:50
+msgid "Management"
+msgstr "Διαχείριση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:53
+msgid "Approvals"
+msgstr "Εγκρίσεις"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:54
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:3
+msgid "Team View"
+msgstr "Προβολή Ομάδας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:107
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:10
+msgid "Export to Excel"
+msgstr "Εξαγωγή σε Excel"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:45
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:154
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:69
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:32
+msgid "HR"
+msgstr "ΔΑΔ"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:7
+msgid "HR Dashboard"
+msgstr "Πίνακας Ελέγχου ΔΑΔ"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:95
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:8
+msgid "Set Vacation Days"
+msgstr "Ορισμός Ημερών Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:99
+msgid "Assign Vacation"
+msgstr "Ανάθεση Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:68
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:103
+msgid "All Vacations"
+msgstr "Όλες οι Άδειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:43
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:152
+msgid "Admin"
+msgstr "Διαχειριστής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:7
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:78
+msgid "Admin Dashboard"
+msgstr "Πίνακας Ελέγχου Διαχειριστή"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:79
+msgid "Users"
+msgstr "Χρήστες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:80
+msgid "Departments"
+msgstr "Τμήματα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:82
+msgid "AD Settings"
+msgstr "Ρυθμίσεις AD"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:83
+msgid "AD Import"
+msgstr "Εισαγωγή από AD"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:85
+msgid "Vacation Causes"
+msgstr "Αιτίες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:79
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:86
+msgid "Greek Holidays"
+msgstr "Ελληνικές Αργίες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:88
+msgid "Audit Log"
+msgstr "Αρχείο Καταγραφής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:89
+#, fuzzy
+msgid "Logs"
+msgstr "Αρχεία Καταγραφής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:7
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:90
+#, fuzzy
+msgid "Email Settings"
+msgstr "Ρυθμίσεις AD"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:105
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:134
+#, fuzzy
+msgid "No notifications"
+msgstr "Δεν υπάρχουν επερχόμενες άδειες."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:106
+#, fuzzy
+msgid "Notifications"
+msgstr "Γρήγορες Ενέργειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:132
+#, fuzzy
+msgid "See all"
+msgstr "Προβολή Όλων"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:159
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:23
+msgid "Remaining"
+msgstr "Υπόλοιπο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:162
+#, fuzzy
+msgid "Profile"
+msgstr "Ρόλος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:163
+msgid "Logout"
+msgstr "Αποσύνδεση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:187
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:195
+msgid "Confirm"
+msgstr "Επιβεβαίωση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:191
+msgid "Are you sure?"
+msgstr "Είστε σίγουρος;"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:34
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:33
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:77
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:194
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:51
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:34
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:105
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:205
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:207
+msgid "Loading..."
+msgstr "Φόρτωση..."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:13
+#, fuzzy
+msgid "Import from Active Directory"
+msgstr "Εισαγωγή από AD"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:22
+msgid "Step 1: Preview"
+msgstr "Βήμα 1: Προεπισκόπηση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:23
+msgid "Search Active Directory for users using current LDAP settings."
+msgstr "Αναζήτηση χρηστών στο Active Directory με τρέχουσες ρυθμίσεις LDAP."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:27
+msgid "Preview Users from AD"
+msgstr "Προεπισκόπηση Χρηστών από AD"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:31
+msgid "Configure LDAP Settings"
+msgstr "Διαμόρφωση Ρυθμίσεων LDAP"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:39
+msgid "Preview Results"
+msgstr "Αποτελέσματα Προεπισκόπησης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:42
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:152
+#, python-format
+msgid "Import Selected (%(count)s)"
+msgstr "Εισαγωγή Επιλεγμένων (%(count)s)"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:59
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:17
+msgid "Username"
+msgstr "Όνομα Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:60
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:22
+msgid "Display Name"
+msgstr "Εμφανιζόμενο Όνομα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:61
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:23
+msgid "Email"
+msgstr "Email"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:83
+#, fuzzy
+msgid "Existing"
+msgstr "Απόφαση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:85
+msgid "New"
+msgstr "Νέο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:97
+msgid "Click \"Preview Users from AD\" to see users available for import."
+msgstr "Κάντε κλικ στο "Προεπισκόπηση Χρηστών από AD" για να δείτε διαθέσιμους χρήστες."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:98
+msgid "Make sure LDAP settings are configured correctly."
+msgstr "Βεβαιωθείτε ότι οι ρυθμίσεις LDAP έχουν ρυθμιστεί σωστά."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:119
+msgid "Searching Active Directory..."
+msgstr "Αναζήτηση στο Active Directory..."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:143
+#, fuzzy
+msgid "Import Selected"
+msgstr "Εισαγωγή Χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:145
+#, fuzzy
+msgid "Import selected users?"
+msgstr "Εισαγωγή Χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:146
+#, fuzzy
+msgid "Importing users..."
+msgstr "Εισαγωγή Χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:9
+msgid "Active Directory Settings"
+msgstr "Ρυθμίσεις Active Directory"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:16
+msgid "LDAP Server"
+msgstr "Διακομιστής LDAP"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:20
+msgid "Base DN"
+msgstr "Base DN"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:26
+msgid "Bind DN"
+msgstr "Bind DN"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:30
+msgid "Bind Password"
+msgstr "Κωδικός Bind"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:35
+msgid "Attribute Mapping"
+msgstr "Αντιστοίχιση Χαρακτηριστικών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:38
+msgid "Username Attribute"
+msgstr "Χαρακτηριστικό Ονόματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:42
+msgid "Email Attribute"
+msgstr "Χαρακτηριστικό Email"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:46
+msgid "Display Name Attribute"
+msgstr "Χαρακτηριστικό Εμφανιζόμενου Ονόματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:52
+msgid "Department Attribute"
+msgstr "Χαρακτηριστικό Τμήματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:56
+msgid "Manager Attribute"
+msgstr "Χαρακτηριστικό Διευθυντή"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:60
+msgid "User Filter"
+msgstr "Φίλτρο Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:75
+msgid "Test Connection"
+msgstr "Δοκιμή Σύνδεσης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:18
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:48
+msgid "Timestamp"
+msgstr "Χρονική Σφραγίδα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:51
+#, fuzzy
+msgid "User"
+msgstr "Χρήστες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:20
+#, fuzzy
+msgid "Action"
+msgstr "Ενέργειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:21
+#, fuzzy
+msgid "Details"
+msgstr "Email"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:22
+msgid "IP Address"
+msgstr "Διεύθυνση IP"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:36
+#, fuzzy
+msgid "No audit log entries."
+msgstr "Αρχείο Καταγραφής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:21
+msgid "Name (English)"
+msgstr "Όνομα (Αγγλικά)"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:27
+msgid "Name (Greek)"
+msgstr "Όνομα (Ελληνικά)"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:35
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:70
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:56
+msgid "Active"
+msgstr "Ενεργός"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:10
+msgid "New Cause"
+msgstr "Νέα Αιτία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:26
+#, fuzzy
+msgid "Name"
+msgstr "Όνομα Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:29
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:49
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:61
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:54
+msgid "Actions"
+msgstr "Ενέργειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:37
+msgid "Inactive"
+msgstr "Ανενεργό"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:45
+msgid "Delete this cause?"
+msgstr "Διαγραφή αυτής της αιτίας;"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:59
+#, fuzzy
+msgid "No vacation causes defined yet."
+msgstr "Νέα Αιτία Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:60
+msgid ""
+"Causes are used by HR when assigning vacation days (e.g. \"Company "
+"Shutdown\", \"Mandatory Leave\")."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:17
+msgid "Total Users"
+msgstr "Σύνολο Χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:18
+#, fuzzy
+msgid "active"
+msgstr "Ενεργός"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:36
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:26
+msgid "Pending Requests"
+msgstr "Αιτήματα σε Αναμονή"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:37
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:39
+msgid "awaiting approval"
+msgstr "αναμονή έγκρισης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:46
+msgid "Holidays"
+msgstr "Αργίες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:47
+#, fuzzy
+msgid "vacation causes"
+msgstr "Αιτίες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:57
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:89
+msgid "Quick Actions"
+msgstr "Γρήγορες Ενέργειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:63
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:8
+msgid "Manage Users"
+msgstr "Διαχείριση Χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:63
+msgid "Add, edit, or deactivate users"
+msgstr "Προσθήκη, επεξεργασία ή απενεργοποίηση χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:67
+msgid "Manage Departments"
+msgstr "Διαχείριση Τμημάτων"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:67
+#, fuzzy
+msgid "Create and manage departments"
+msgstr "Διαχείριση Τμημάτων"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:71
+msgid "Import from AD"
+msgstr "Εισαγωγή από AD"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:71
+msgid "Import users from Active Directory"
+msgstr "Εισαγωγή χρηστών από το Active Directory"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:75
+#, fuzzy
+msgid "Manage dynamic vacation causes"
+msgstr "Επεξεργασία Αιτίας Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:79
+#, fuzzy
+msgid "Add or manage holidays"
+msgstr "Προσθήκη Αργίας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:88
+msgid "Monthly Overview"
+msgstr "Μηνιαία Επισκόπηση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:93
+#, fuzzy
+msgid "Approved this month"
+msgstr "Εγκρίσεις Αυτόν τον Μήνα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:94
+#, fuzzy
+msgid "Active users"
+msgstr "Αιτίες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:96
+msgid "Export All to Excel"
+msgstr "Εξαγωγή Όλων σε Excel"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:25
+msgid "Department Manager"
+msgstr "Διευθυντής Τμήματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:40
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:49
+msgid "Manager"
+msgstr "Διευθυντής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:25
+#, fuzzy
+msgid "Members"
+msgstr "Μέλη Ομάδας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:41
+#, fuzzy
+msgid "Delete this department?"
+msgstr "Επεξεργασία Τμήματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:55
+#, fuzzy
+msgid "No departments yet."
+msgstr "Τμήματα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:37
+msgid "Leave empty to keep current password."
+msgstr "Αφήστε κενό για να διατηρήσετε τον τρέχοντα κωδικό."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:60
+msgid "Language used for email notifications."
+msgstr "Γλώσσα για ειδοποιήσεις email."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:75
+msgid "Send Test Email"
+msgstr "Αποστολή Δοκιμαστικού Email"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:80
+msgid "Set your email address in your profile to receive test emails."
+msgstr "Ορίστε τη διεύθυνση email στο προφίλ σας για να λαμβάνετε δοκιμαστικά email."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:25
+msgid "Date"
+msgstr "Ημερομηνία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:2
+#, fuzzy
+msgid "Import Holidays"
+msgstr "Επεξεργασία Αργίας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:9
+#, fuzzy
+msgid "Import Holidays from CSV"
+msgstr "Εισαγωγή από AD"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:15
+#, fuzzy
+msgid "CSV File"
+msgstr "Φίλτρο Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:20
+msgid "CSV Format:"
+msgstr "Μορφή CSV:"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:24
+msgid ""
+"The first line must be the header and will be skipped. The name_el column"
+" is optional."
+msgstr ""
+"Η πρώτη γραμμή είναι η κεφαλίδα και θα παραλειφθεί. Η στήλη name_el είναι πρ"
+"οαιρετική."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:127
+msgid "Back"
+msgstr "Πίσω"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:10
+msgid "Add Holiday"
+msgstr "Προσθήκη Αργίας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:13
+#, fuzzy
+msgid "Import CSV"
+msgstr "Εισαγωγή Χρηστών"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:42
+#, fuzzy
+msgid "Delete this holiday?"
+msgstr "Επεξεργασία Αργίας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:56
+msgid "No holidays added yet."
+msgstr "Δεν έχουν προστεθεί αργίες ακόμα."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:57
+msgid ""
+"Add Greek holidays so the system can exclude them when calculating "
+"vacation days."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:7
+#, fuzzy
+msgid "Application Logs"
+msgstr "Αρχεία Καταγραφής Εφαρμογής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:15
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:49
+msgid "Level"
+msgstr "Επίπεδο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:17
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:20
+msgid "All"
+msgstr "Όλα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:24
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:25
+msgid "message, module, logger..."
+msgstr "μήνυμα, module, logger..."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:28
+#, fuzzy
+msgid "Per page"
+msgstr "ανά έτος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:36
+#, fuzzy
+msgid "Filter"
+msgstr "Φίλτρο Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:50
+msgid "Message"
+msgstr "Μήνυμα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:51
+#, fuzzy
+msgid "Module"
+msgstr "Ρόλος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:71
+msgid "No log entries found."
+msgstr "Δεν βρέθηκαν καταχωρήσεις αρχείου καταγραφής."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:115
+#, python-format
+msgid "Page %(page)s of %(total)s (%(count)s entries)"
+msgstr "Σελίδα %(page)s από %(total)s (%(count)s καταχωρήσεις)"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:27
+msgid "Password"
+msgstr "Κωδικός"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:32
+msgid "leave blank to keep current"
+msgstr "αφήστε κενό για να διατηρηθεί το τρέχον"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:46
+msgid "Vacation Days/Year"
+msgstr "Ημέρες Άδειας/Έτος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:50
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:66
+#, fuzzy
+msgid "Top Management"
+msgstr "Διαχείριση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:26
+msgid "Vacation Days"
+msgstr "Ημέρες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:27
+msgid "Role"
+msgstr "Ρόλος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:47
+msgid "Top Mgmt"
+msgstr "Ανώτατη Διοίκηση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:58
+msgid "Disabled"
+msgstr "Απενεργοποιημένος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:67
+msgid "Disable this user?"
+msgstr "Απενεργοποίηση αυτού του χρήστη;"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:2
+msgid "Login"
+msgstr "Σύνδεση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:12
+msgid "Sign in to your account"
+msgstr "Συνδεθείτε στον λογαριασμό σας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:20
+msgid "Enter username"
+msgstr "Εισάγετε όνομα χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:30
+msgid "Enter password"
+msgstr "Εισάγετε κωδικό"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/profile.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/profile.html:9
+msgid "My Profile"
+msgstr "Το Προφίλ Μου"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/profile.html:18
+msgid "Upload a photo or use Gravatar (auto-detected from your email)"
+msgstr "Ανεβάστε φωτογραφία ή χρησιμοποιήστε Gravatar (αυτόματη ανίχνευση από το email σας)"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:6
+#, fuzzy, python-format
+msgid "Hello %(name)s,"
+msgstr "Καλώς ήρθες, %(name)s!"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:7
+#, fuzzy
+msgid "Your vacation request has been approved."
+msgstr "Το αίτημα άδειας υποβλήθηκε για έγκριση."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:9
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:9
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:9
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:9
+msgid "From:"
+msgstr "Από:"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:10
+msgid "To:"
+msgstr "Έως:"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:11
+#, fuzzy
+msgid "Days:"
+msgstr "Ημέρες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:12
+#, fuzzy
+msgid "Approved by:"
+msgstr "Εγκεκριμένο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:7
+msgid "A vacation has been assigned to you by HR."
+msgstr "Σας ανατέθηκε άδεια από το ΔΑΔ."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:12
+#, fuzzy
+msgid "Assigned by:"
+msgstr "Ανάθεση από ΔΑΔ"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:7
+#, fuzzy, python-format
+msgid "%(name)s has submitted a new vacation request:"
+msgstr "Αξιολόγηση Αιτήματος Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:12
+#, fuzzy
+msgid "Reason:"
+msgstr "Αιτιολογία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:12
+msgid "N/A"
+msgstr "Δ/Υ"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:14
+#, fuzzy
+msgid "Review Request"
+msgstr "Νέο Αίτημα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:7
+#, fuzzy
+msgid "Your vacation request has been rejected."
+msgstr "Το αίτημα άδειας ακυρώθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:13
+msgid "Comment:"
+msgstr "Σχόλιο:"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:20
+msgid "All Statuses"
+msgstr "Όλες οι Καταστάσεις"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:72
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:68
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:52
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:38
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:77
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:163
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:39
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:70
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:105
+msgid "Pending"
+msgstr "Σε Αναμονή"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:71
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:51
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:161
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:37
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:68
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:104
+msgid "Approved"
+msgstr "Εγκεκριμένο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:74
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:70
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:54
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:72
+msgid "Rejected"
+msgstr "Απορριφθέν"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:74
+msgid "Cancelled"
+msgstr "Ακυρωθέν"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:30
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:19
+msgid "All Departments"
+msgstr "Όλα τα Τμήματα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:45
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:59
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:48
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:113
+msgid "Period"
+msgstr "Περίοδος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:80
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:99
+#, fuzzy
+msgid "Edit"
+msgstr "Επεξεργασία Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:93
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:120
+#, fuzzy
+msgid "No vacation requests found."
+msgstr "Νέο Αίτημα Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:9
+msgid "Assign Vacation to Employee"
+msgstr "Ανάθεση Άδειας σε Υπάλληλο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:29
+#, fuzzy
+msgid "Cause"
+msgstr "Νέα Αιτία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:36
+msgid "Additional Notes"
+msgstr "Επιπλέον Σημειώσεις"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:44
+msgid ""
+"This vacation will be auto-approved and count toward the employee's "
+"annual balance."
+msgstr ""
+"Αυτή η άδεια θα εγκριθεί αυτόματα και θα μετρήσει στο ετήσιο υπόλοιπο του"
+" υπαλλήλου."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:17
+msgid "Active Employees"
+msgstr "Ενεργοί Υπάλληλοι"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:36
+msgid "Approved This Month"
+msgstr "Εγκρίσεις Αυτόν τον Μήνα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:46
+#, fuzzy
+msgid "Recent Requests"
+msgstr "Αιτήματα σε Αναμονή"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:15
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:57
+msgid "Dates"
+msgstr "Ημερομηνίες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:80
+#, fuzzy
+msgid "No requests yet."
+msgstr "Νέο Αίτημα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:95
+#, fuzzy
+msgid "Configure annual vacation days per employee"
+msgstr "Ανάθεση Άδειας σε Υπάλληλο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:99
+#, fuzzy
+msgid "Assign vacation days with a cause"
+msgstr "Ανάθεση Άδειας σε Υπάλληλο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:103
+#, fuzzy
+msgid "View all company vacation requests"
+msgstr "Αξιολόγηση Αιτήματος Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:107
+#, fuzzy
+msgid "Export all approved vacations"
+msgstr "Όλες οι Άδειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:11
+#, python-format
+msgid "Set Vacation Days for %(name)s"
+msgstr "Ορισμός Ημερών Άδειας για %(name)s"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:17
+msgid "Current balance"
+msgstr "Τρέχον υπόλοιπο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:18
+msgid "days remaining"
+msgstr "ημέρες υπόλοιπο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:24
+#, fuzzy
+msgid "Vacation Days Per Year"
+msgstr "Ημέρες Άδειας/Έτος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:9
+msgid "Configure annual vacation entitlement for each employee."
+msgstr "Διαμόρφωση ετήσιων ημερών άδειας για κάθε υπάλληλο."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:21
+#, fuzzy
+msgid "Current Days/Year"
+msgstr "Ημέρες Άδειας/Έτος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:22
+#, fuzzy
+msgid "Used"
+msgstr "Χρήστες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:47
+#, fuzzy
+msgid "Set Days"
+msgstr "Ημέρες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:53
+msgid "No active users found."
+msgstr "Δεν βρέθηκαν ενεργοί χρήστες."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:9
+msgid "Review Vacation Request"
+msgstr "Αξιολόγηση Αιτήματος Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:33
+msgid "Working Days"
+msgstr "Εργάσιμες Ημέρες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:37
+msgid "Remaining Balance"
+msgstr "Υπόλοιπο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:44
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:61
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:52
+msgid "Reason"
+msgstr "Αιτιολογία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:53
+#, fuzzy
+msgid "Change Request Pending"
+msgstr "Νέο Αίτημα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:56
+#, fuzzy
+msgid "Original Dates"
+msgstr "Εργάσιμες Ημέρες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:62
+msgid "Requested New Dates"
+msgstr "Νέες Ημερομηνίες Αιτήματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:71
+msgid "Reason for Change"
+msgstr "Λόγος Αλλαγής"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:81
+#, fuzzy
+msgid "Approve Change"
+msgstr "Έγκριση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:87
+#, fuzzy
+msgid "Reject Change"
+msgstr "Απορριφθέν"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:98
+msgid "Decision"
+msgstr "Απόφαση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:120
+msgid "Comment (optional)"
+msgstr "Σχόλιο (προαιρετικό)"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:121
+msgid "Add a comment for the employee..."
+msgstr "Προσθέστε ένα σχόλιο για τον υπάλληλο..."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:7
+msgid "Management Dashboard"
+msgstr "Πίνακας Διαχείρισης"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:50
+msgid "Pending Approvals"
+msgstr "Εκκρεμείς Εγκρίσεις"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:31
+msgid "Team Members"
+msgstr "Μέλη Ομάδας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:40
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:102
+#, fuzzy
+msgid "Change Requests"
+msgstr "Νέο Αίτημα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:81
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:112
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:60
+msgid "Review"
+msgstr "Αξιολόγηση"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:92
+msgid "No pending approvals!"
+msgstr "Δεν υπάρχουν εκκρεμείς εγκρίσεις!"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:93
+#, fuzzy
+msgid "All vacation requests have been processed."
+msgstr "Το αίτημα άδειας ακυρώθηκε."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:126
+msgid "No change requests pending."
+msgstr "Δεν υπάρχουν εκκρεμή αιτήματα αλλαγής."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:133
+msgid "My Team"
+msgstr "Η Ομάδα Μου"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:148
+#, fuzzy
+msgid "No team members assigned."
+msgstr "Μέλη Ομάδας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:8
+msgid "Team Vacation Overview"
+msgstr "Επισκόπηση Αδειών Ομάδας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:73
+#, fuzzy
+msgid "No vacation requests found for your team."
+msgstr "Το αίτημα άδειας υποβλήθηκε για έγκριση."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:9
+#, fuzzy
+msgid "Request Vacation Date Change"
+msgstr "Αίτημα Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:13
+#, fuzzy
+msgid "Original Request"
+msgstr "Νέο Αίτημα"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:49
+msgid "Explain why you need to change the dates..."
+msgstr "Εξηγήστε γιατί χρειάζεται να αλλάξετε τις ημερομηνίες..."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:18
+msgid "Remaining Days"
+msgstr "Υπόλοιπες Ημέρες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:19
+msgid "of"
+msgstr "από"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:19
+msgid "per year"
+msgstr "ανά έτος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:29
+msgid "upcoming vacations"
+msgstr "επερχόμενες άδειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:49
+msgid "Upcoming Vacations"
+msgstr "Επερχόμενες Άδειες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:92
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:104
+msgid "Cancel this request?"
+msgstr "Ακύρωση αυτού του αιτήματος;"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:106
+msgid "No upcoming vacations."
+msgstr "Δεν υπάρχουν επερχόμενες άδειες."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:108
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:122
+msgid "Request Vacation"
+msgstr "Αίτημα Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:119
+msgid "Recent History"
+msgstr "Πρόσφατο Ιστορικό"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:137
+#, fuzzy
+msgid "days"
+msgstr "Ημέρες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:141
+#, fuzzy
+msgid "No history yet"
+msgstr "Πρόσφατο Ιστορικό"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:151
+msgid "Team Vacations"
+msgstr "Άδειες Ομάδας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:173
+msgid "View All"
+msgstr "Προβολή Όλων"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:18
+#, fuzzy
+msgid "Edit Vacation Dates"
+msgstr "Επεξεργασία Αιτίας Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:23
+#, fuzzy
+msgid "Current Request"
+msgstr "Αίτημα Χρήστη"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:28
+#, fuzzy
+msgid "Current Dates"
+msgstr "Τρέχον υπόλοιπο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:44
+msgid "Saving changes..."
+msgstr "Αποθήκευση αλλαγών..."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:67
+msgid "I confirm the updated dates are correct."
+msgstr "Επιβεβαιώνω ότι οι ενημερωμένες ημερομηνίες είναι σωστές."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:53
+#, fuzzy
+msgid "Approved By"
+msgstr "Εγκεκριμένο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:90
+#, fuzzy
+msgid "Change Pending"
+msgstr "Σε Αναμονή"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:94
+#, fuzzy
+msgid "Request Change"
+msgstr "Αίτημα Άδειας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:24
+msgid "Remaining vacation days"
+msgstr "Υπόλοιπες ημέρες αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:26
+#, fuzzy
+msgid "Submitting request..."
+msgstr "Υποβολή Αιτήματος"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:46
+#, fuzzy
+msgid "Vacation Cause"
+msgstr "Αιτίες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:55
+#, fuzzy
+msgid "Custom Reason"
+msgstr "Αιτιολογία"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:56
+msgid "Describe your reason"
+msgstr "Περιγράψτε τον λόγο σας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:67
+msgid "I confirm that my manager has been informed of this request."
+msgstr "Επιβεβαιώνω ότι ο διευθυντής μου έχει ενημερωθεί για αυτό το αίτημα."
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:28
+#, fuzzy
+msgid "Holiday"
+msgstr "Αργίες"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:29
+msgid "Export PDF"
+msgstr "Εξαγωγή PDF"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:30
+msgid "PDF"
+msgstr "PDF"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:48
+#, fuzzy
+msgid "Vacation Details"
+msgstr "Ημέρες Αδείας"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:53
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:77
+#, fuzzy
+msgid "Year"
+msgstr "ανά έτος"
+
+#~ msgid "Sign In"
+#~ msgstr "Σύνδεση"
+
+#~ msgid "Reject"
+#~ msgstr "Απόρριψη"
+
+#~ msgid "Save"
+#~ msgstr "Αποθήκευση"
+
+#~ msgid "Save Settings"
+#~ msgstr "Αποθήκευση Ρυθμίσεων"
+
+#~ msgid "Submit"
+#~ msgstr "Υποβολή"
+

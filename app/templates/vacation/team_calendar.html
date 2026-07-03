@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Team Calendar') }}{% endblock %}
+
+{% block extra_head %}
+<style>
+#calendar { max-width: 100%; margin: 0 auto; }
+.fc-event { cursor: pointer; border-radius: 4px !important; }
+.fc-day-sat, .fc-day-sun { background-color: rgba(0,0,0,0.02); }
+.fc .fc-toolbar-title { font-size: 1.2em; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h2><i class="fas fa-calendar-alt me-2"></i>{{ _('Team Calendar') }}</h2>
+        <div class="d-flex gap-2 align-items-center flex-wrap">
+            <select class="form-select form-select-sm" id="departmentFilter" style="width: auto;">
+                <option value="0">{{ _('All Departments') }}</option>
+                {% for dept in departments %}
+                <option value="{{ dept.id }}" {% if department_id == dept.id %}selected{% endif %}>{{ dept.name }}</option>
+                {% endfor %}
+            </select>
+            <div class="btn-group">
+                <span class="badge bg-success align-self-center me-1">{{ _('Approved') }}</span>
+                <span class="badge bg-warning align-self-center me-1">{{ _('Pending') }}</span>
+                <span class="badge bg-info align-self-center me-1">{{ _('HR Assigned') }}</span>
+                <span class="badge bg-danger align-self-center me-1">{{ _('Holiday') }}</span>
+                <button class="btn btn-sm btn-outline-secondary ms-2" onclick="exportPdf()" title="{{ _('Export PDF') }}">
+                    <i class="fas fa-file-pdf"></i> {{ _('PDF') }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4" id="calendarCard">
+    <div class="card-body p-2">
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<!-- Event Detail Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="eventModalTitle">{{ _('Vacation Details') }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="eventModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ _('Close') }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.3/html2pdf.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var eventData = {{ events|tojson }};
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridWeek,dayGridMonth,yearView'
+        },
+        views: {
+            yearView: {
+                type: 'multiMonth',
+                buttonText: '{{ _("Year") }}',
+                multiMonthDuration: { months: 12 },
+                duration: { months: 12 }
+            }
+        },
+        locale: '{{ current_user.locale or "en" }}',
+        firstDay: 1,
+        height: function() {
+            var card = document.getElementById('calendarCard');
+            var rect = card.getBoundingClientRect();
+            var footer = document.querySelector('footer');
+            var footerHeight = footer ? footer.offsetHeight : 0;
+            return window.innerHeight - rect.top - footerHeight - 20;
+        }(),
+        events: eventData,
+        eventDidMount: function(info) {
+            if (info.event.extendedProps.status === 'holiday') {
+                info.el.style.opacity = '0.4';
+                return;
+            }
+            if (info.event.extendedProps.type === 'pending') {
+                info.el.style.borderStyle = 'dashed';
+            }
+            var avatarUrl = info.event.extendedProps.avatar_url;
+            if (avatarUrl) {
+                var titleEl = info.el.querySelector('.fc-event-title');
+                if (titleEl) {
+                    var img = document.createElement('img');
+                    img.src = avatarUrl;
+                    img.style.cssText = 'width:18px;height:18px;border-radius:50%;margin-right:4px;vertical-align:middle;object-fit:cover;';
+                    img.onerror = function() { this.style.display = 'none'; };
+                    titleEl.insertBefore(img, titleEl.firstChild);
+                }
+            }
+        },
+        eventClick: function(info) {
+            if (info.event.extendedProps.status === 'holiday') return;
+            const props = info.event.extendedProps;
+            const statusLabels = {
+                'approved': '{{ _("Approved") }}',
+                'pending': '{{ _("Pending") }}',
+                'hr_assigned': '{{ _("HR Assigned") }}'
+            };
+            const start = info.event.start.toLocaleDateString();
+            const end = info.event.end ? new Date(info.event.end.getTime() - 86400000).toLocaleDateString() : start;
+            const avatarHtml = props.avatar_url
+                ? '<img src="' + props.avatar_url + '" style="width:32px;height:32px;border-radius:50%;margin-right:8px;object-fit:cover;vertical-align:middle;">'
+                : '<span style="display:inline-block;width:32px;height:32px;border-radius:50%;background:#adb5bd;margin-right:8px;vertical-align:middle;"></span>';
+            document.getElementById('eventModalTitle').innerHTML = avatarHtml + props.username;
+            document.getElementById('eventModalBody').innerHTML =
+                '<p><strong>{{ _("Department") }}:</strong> ' + (props.department || '-') + '</p>' +
+                '<p><strong>{{ _("Period") }}:</strong> ' + start + ' - ' + end + '</p>' +
+                '<p><strong>{{ _("Days") }}:</strong> ' + props.days + '</p>' +
+                '<p><strong>{{ _("Status") }}:</strong> ' + (statusLabels[props.status] || props.status) + '</p>';
+            new bootstrap.Modal(document.getElementById('eventModal')).show();
+        }
+    });
+    calendar.render();
+
+    document.getElementById('departmentFilter').addEventListener('change', function() {
+        const deptId = this.value;
+        const url = new URL(window.location);
+        if (deptId > 0) url.searchParams.set('department', deptId);
+        else url.searchParams.delete('department');
+        window.location = url.toString();
+    });
+});
+
+function exportPdf() {
+    var element = document.getElementById('calendarCard');
+    var opt = {
+        margin:       0.5,
+        filename:     'team-calendar.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'a3', orientation: 'landscape' }
+    };
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+{% endblock %}

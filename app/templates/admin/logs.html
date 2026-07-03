@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Application Logs') }}{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-12">
+        <h2><i class="fas fa-file-alt me-2"></i>{{ _('Application Logs') }}</h2>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4 mb-3">
+    <div class="card-body">
+        <form method="GET" class="row g-3 align-items-end">
+            <div class="col-auto">
+                <label class="form-label">{{ _('Level') }}</label>
+                <select name="level" class="form-select" onchange="this.form.submit()">
+                    <option value="">{{ _('All') }}</option>
+                    {% for lvl in ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'] %}
+                    <option value="{{ lvl }}" {% if level_filter == lvl %}selected{% endif %}>{{ lvl }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-auto">
+                <label class="form-label">{{ _('Search') }}</label>
+                <input type="text" name="q" class="form-control" value="{{ q }}" placeholder="{{ _('message, module, logger...') }}">
+            </div>
+            <div class="col-auto">
+                <label class="form-label">{{ _('Per page') }}</label>
+                <select name="per_page" class="form-select" onchange="this.form.submit()">
+                    {% for n in [20, 50, 100, 200] %}
+                    <option value="{{ n }}" {% if per_page == n %}selected{% endif %}>{{ n }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> {{ _('Filter') }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle table-sm">
+                <thead class="table-light">
+                    <tr>
+                        <th>{{ _('Timestamp') }}</th>
+                        <th>{{ _('Level') }}</th>
+                        <th>{{ _('Message') }}</th>
+                        <th>{{ _('Module') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                    {% set level_style = {
+                        'DEBUG': 'color: #6c757d;',
+                        'INFO': 'color: #0d6efd;',
+                        'WARNING': 'color: #856404;',
+                        'ERROR': 'color: #e67e22;',
+                        'CRITICAL': 'color: #dc3545; font-weight: bold;',
+                    }.get(entry.level, '') %}
+                    <tr>
+                        <td><small class="text-muted">{{ entry.timestamp }}</small></td>
+                        <td><span style="{{ level_style }}">{{ entry.level }}</span></td>
+                        <td><small>{{ entry.message }}</small></td>
+                        <td><small class="text-muted">{{ entry.module }}</small></td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="4" class="text-center py-4 text-muted">{{ _('No log entries found.') }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% set total_pages = ((total / per_page) | round(0, 'ceil') | int) if total > 0 else 1 %}
+        {% if total_pages > 1 %}
+        {% set args = request.args.to_dict() %}
+        {% if 'page' in args %}{% set _ = args.pop('page') %}{% endif %}
+        <nav>
+            <ul class="pagination pagination-sm justify-content-center mb-0 mt-3">
+                <li class="page-item {{ 'disabled' if page <= 1 }}">
+                    <a class="page-link" href="{{ url_for('admin.logs', page=1, **args) if page > 1 else '#' }}">
+                        <i class="fas fa-angle-double-left"></i>
+                    </a>
+                </li>
+                <li class="page-item {{ 'disabled' if page <= 1 }}">
+                    <a class="page-link" href="{{ url_for('admin.logs', page=page-1, **args) if page > 1 else '#' }}">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                </li>
+                {% set start = [1, page - 2] | max %}
+                {% set end = [total_pages, start + 4] | min %}
+                {% set start = [1, end - 4] | max %}
+                {% for p in range(start, end + 1) %}
+                <li class="page-item {{ 'active' if p == page }}">
+                    <a class="page-link" href="{{ url_for('admin.logs', page=p, **args) }}">{{ p }}</a>
+                </li>
+                {% endfor %}
+                <li class="page-item {{ 'disabled' if page >= total_pages }}">
+                    <a class="page-link" href="{{ url_for('admin.logs', page=page+1, **args) if page < total_pages else '#' }}">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li class="page-item {{ 'disabled' if page >= total_pages }}">
+                    <a class="page-link" href="{{ url_for('admin.logs', page=total_pages, **args) if page < total_pages else '#' }}">
+                        <i class="fas fa-angle-double-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p class="text-center text-muted small mb-0 mt-2">
+            {{ _('Page %(page)s of %(total)s (%(count)s entries)', page=page, total=total_pages, count=total) }}
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

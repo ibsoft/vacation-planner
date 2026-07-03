@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}{{ _('AD Settings') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="mb-0"><i class="fas fa-server me-2 text-primary"></i>{{ _('Active Directory Settings') }}</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('LDAP Server') }}</label>
+                            {{ form.ldap_server(class="form-control" + (" is-invalid" if form.ldap_server.errors else "")) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">{{ _('Base DN') }}</label>
+                            {{ form.ldap_base_dn(class="form-control" + (" is-invalid" if form.ldap_base_dn.errors else "")) }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Bind DN') }}</label>
+                            {{ form.ldap_bind_dn(class="form-control" + (" is-invalid" if form.ldap_bind_dn.errors else "")) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">{{ _('Bind Password') }}</label>
+                            {{ form.ldap_bind_password(class="form-control") }}
+                        </div>
+                    </div>
+                    <hr>
+                    <h5 class="mb-3">{{ _('Attribute Mapping') }}</h5>
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Username Attribute') }}</label>
+                            {{ form.ldap_username_attr(class="form-control") }}
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Email Attribute') }}</label>
+                            {{ form.ldap_email_attr(class="form-control") }}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">{{ _('Display Name Attribute') }}</label>
+                            {{ form.ldap_display_name_attr(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Department Attribute') }}</label>
+                            {{ form.ldap_dept_attr(class="form-control") }}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">{{ _('Manager Attribute') }}</label>
+                            {{ form.ldap_manager_attr(class="form-control") }}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">{{ _('User Filter') }}</label>
+                            {{ form.ldap_user_filter(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex gap-2 flex-wrap">
+                            {{ form.submit(class="btn btn-primary") }}
+                            <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <form method="POST" action="{{ url_for('admin.ad_test_connection') }}">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-outline-info">
+                                <i class="fas fa-plug me-1"></i>{{ _('Test Connection') }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

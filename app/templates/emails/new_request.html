@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family:Arial,sans-serif;padding:20px;">
+    <h2>{{ _('New Vacation Request') }}</h2>
+    <p>{{ _('Hello %(name)s,', name=recipient.display_name or recipient.username) }}</p>
+    <p>{{ _('%(name)s has submitted a new vacation request that requires your approval:', name=user.display_name or user.username) }}</p>
+    <table style="border-collapse:collapse;margin:15px 0;">
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('From:') }}</td><td style="padding:5px 10px;">{{ request.start_date.strftime('%d/%m/%Y') }}</td></tr>
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('To:') }}</td><td style="padding:5px 10px;">{{ request.end_date.strftime('%d/%m/%Y') }}</td></tr>
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('Days:') }}</td><td style="padding:5px 10px;">{{ request.days_count }}</td></tr>
+        <tr><td style="padding:5px 10px;font-weight:bold;">{{ _('Reason:') }}</td><td style="padding:5px 10px;">{{ request.reason or _('N/A') }}</td></tr>
+    </table>
+    <p>{{ _('Please log in to the system to approve or reject this request.') }}</p>
+    <p><a href="{{ url_for('manager.approve_request', req_id=request.id, _external=True) }}" style="background:#0d6efd;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">{{ _('Review & Decide') }}</a></p>
+</body>
+</html>

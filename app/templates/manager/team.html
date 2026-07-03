@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% from "macros/pagination.html" import render_pagination %}
+{% block title %}{{ _('Team View') }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+        <h2><i class="fas fa-users me-2"></i>{{ _('Team Vacation Overview') }}</h2>
+        <a href="{{ url_for('manager.export') }}" class="btn btn-success">
+            <i class="fas fa-file-excel me-1"></i>{{ _('Export to Excel') }}
+        </a>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body">
+        {% if requests.items %}
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>{{ _('Employee') }}</th>
+                        <th>{{ _('Period') }}</th>
+                        <th>{{ _('Days') }}</th>
+                        <th>{{ _('Type') }}</th>
+                        <th>{{ _('Status') }}</th>
+                        <th>{{ _('Actions') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for req in requests.items %}
+                    <tr>
+                        <td>
+                            <strong>{{ req.user.display_name or req.user.username }}</strong>
+                            <br><small class="text-muted">{{ req.user.department.name if req.user.department else '' }}</small>
+                        </td>
+                        <td>
+                            {{ req.start_date.strftime('%d/%m/%Y') }}
+                            <i class="fas fa-arrow-right mx-1 text-muted"></i>
+                            {{ req.end_date.strftime('%d/%m/%Y') }}
+                        </td>
+                        <td><span class="badge bg-secondary">{{ req.days_count }}</span></td>
+                        <td>
+                            {% if req.request_type == 'hr_assigned' and req.cause %}
+                            <span class="badge bg-info">{{ req.cause.name }}</span>
+                            {% else %}
+                            <span class="badge bg-light text-dark">{{ _('User Request') }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if req.status == 'approved' %}<span class="badge bg-success">{{ _('Approved') }}</span>
+                            {% elif req.status == 'pending' %}<span class="badge bg-warning text-dark">{{ _('Pending') }}</span>
+                            {% elif req.status == 'hr_assigned' %}<span class="badge bg-info">{{ _('HR Assigned') }}</span>
+                            {% elif req.status == 'rejected' %}<span class="badge bg-danger">{{ _('Rejected') }}</span>
+                            {% elif req.status == 'cancelled' %}<span class="badge bg-secondary">{{ _('Cancelled') }}</span>{% endif %}
+                        </td>
+                        <td>
+                            {% if req.status == 'pending' %}
+                            <a href="{{ url_for('manager.approve_request', req_id=req.id) }}" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-clipboard-check me-1"></i>{{ _('Review') }}
+                            </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {{ render_pagination(requests, 'manager.team') }}
+        {% else %}
+        <div class="text-center py-4 text-muted">
+            <i class="fas fa-inbox fa-3x mb-3"></i>
+            <p>{{ _('No vacation requests found for your team.') }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

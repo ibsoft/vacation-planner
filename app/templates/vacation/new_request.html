@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}{{ _('New Vacation Request') }}{% endblock %}
+
+{% block extra_head %}
+<link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/plugins/rangePlugin/style.css" rel="stylesheet">
+<style>
+.new-request-card { min-height: calc(100vh - 130px); }
+.new-request-card .card-body { display: flex; flex-direction: column; }
+.new-request-card .form-content { flex: 1; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4 new-request-card">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="card-title mb-0"><i class="fas fa-plus-circle me-2 text-primary"></i>{{ _('New Vacation Request') }}</h4>
+            </div>
+            <div class="card-body p-4">
+                <div class="form-content">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        {{ _('Remaining vacation days') }}: <strong>{{ current_user.remaining_days }}/{{ current_user.vacation_days_per_year }}</strong>
+                    </div>
+                    <form method="POST" id="vacationForm" novalidate onsubmit="showSpinner('{{ _('Submitting request...') }}')">
+                        {{ form.hidden_tag() }}
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label class="form-label">{{ _('Start Date') }}</label>
+                                {{ form.start_date(class="form-control datepicker" + (" is-invalid" if form.start_date.errors else "")) }}
+                                {% for error in form.start_date.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">{{ _('End Date') }}</label>
+                                {{ form.end_date(class="form-control datepicker" + (" is-invalid" if form.end_date.errors else "")) }}
+                                {% for error in form.end_date.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label class="form-label">{{ _('Vacation Cause') }}</label>
+                                {{ form.cause_id(class="form-select" + (" is-invalid" if form.cause_id.errors else "")) }}
+                                {% for error in form.cause_id.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row mb-3" id="customReasonRow" style="display:none;">
+                            <div class="col-12">
+                                <label class="form-label">{{ _('Custom Reason') }}</label>
+                                {{ form.custom_reason(class="form-control" + (" is-invalid" if form.custom_reason.errors else ""), rows=2, placeholder=_("Describe your reason")) }}
+                                {% for error in form.custom_reason.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="confirmCheck">
+                                    <label class="form-check-label" for="confirmCheck">
+                                        {{ _('I confirm that my manager has been informed of this request.') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-end">
+                                {{ form.submit(class="btn btn-primary", id="submitBtn", disabled=true) }}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+flatpickr('.datepicker', {
+    dateFormat: 'Y-m-d',
+    locale: '{{ current_user.locale or "en" }}',
+    minDate: 'today',
+    disable: [
+        function(date) {
+            return date.getDay() === 0 || date.getDay() === 6;
+        },
+        {% for d in holiday_dates %}
+        {{ d|tojson }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+});
+
+document.getElementById('confirmCheck').addEventListener('change', function() {
+    document.getElementById('submitBtn').disabled = !this.checked;
+});
+
+var causeSelect = document.getElementById('cause_id');
+var customRow = document.getElementById('customReasonRow');
+function toggleCustomReason() {
+    customRow.style.display = causeSelect.value === '-1' ? '' : 'none';
+}
+causeSelect.addEventListener('change', toggleCustomReason);
+toggleCustomReason();
+</script>
+{% endblock %}

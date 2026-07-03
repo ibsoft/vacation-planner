@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Set Vacation Days') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="mb-0">
+                    <i class="fas fa-user-cog me-2 text-primary"></i>
+                    {{ _('Set Vacation Days for %(name)s', name=user.display_name or user.username) }}
+                </h4>
+            </div>
+            <div class="card-body p-4">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    {{ _('Current balance') }}: <strong>{{ user.remaining_days }}/{{ user.vacation_days_per_year }}</strong>
+                    {{ _('days remaining') }}
+                </div>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label">{{ _('Vacation Days Per Year') }}</label>
+                            {{ form.vacation_days_per_year(class="form-control form-control-lg" + (" is-invalid" if form.vacation_days_per_year.errors else "")) }}
+                            {% for error in form.vacation_days_per_year.errors %}
+                            <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex gap-2">
+                            {{ form.submit(class="btn btn-primary btn-lg") }}
+                            <a href="{{ url_for('hr.users') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Email Settings') }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-envelope me-2"></i>{{ _('Email Settings') }}</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            {{ form.smtp_server.label(class="form-label") }}
+                            {{ form.smtp_server(class="form-control", placeholder="smtp.gmail.com") }}
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.smtp_port.label(class="form-label") }}
+                            {{ form.smtp_port(class="form-control", placeholder="587") }}
+                        </div>
+                        <div class="col-md-3">
+                            {{ form.smtp_from.label(class="form-label") }}
+                            {{ form.smtp_from(class="form-control", placeholder="noreply@example.com") }}
+                        </div>
+                        <div class="col-md-6" id="smtpUserGroup">
+                            {{ form.smtp_user.label(class="form-label") }}
+                            {{ form.smtp_user(class="form-control") }}
+                        </div>
+                        <div class="col-md-6" id="smtpPassGroup">
+                            {{ form.smtp_password.label(class="form-label") }}
+                            {{ form.smtp_password(class="form-control") }}
+                            <div class="form-text">{{ _('Leave empty to keep current password.') }}</div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check form-switch">
+                                {{ form.smtp_no_auth(class="form-check-input", id="smtpNoAuth") }}
+                                {{ form.smtp_no_auth.label(class="form-check-label") }}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check form-switch">
+                                {{ form.smtp_use_tls(class="form-check-input") }}
+                                {{ form.smtp_use_tls.label(class="form-check-label") }}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check form-switch">
+                                {{ form.smtp_text_only(class="form-check-input") }}
+                                {{ form.smtp_text_only.label(class="form-check-label") }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            {{ form.email_locale.label(class="form-label") }}
+                            {{ form.email_locale(class="form-select") }}
+                            <div class="form-text">{{ _('Language used for email notifications.') }}</div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 d-flex gap-2 flex-wrap">
+                            {{ form.submit(class="btn btn-primary") }}
+                            <a href="{{ url_for('admin.dashboard') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        {% if current_user.email %}
+                        <form method="POST" action="{{ url_for('admin.email_test') }}">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-outline-info">
+                                <i class="fas fa-paper-plane me-1"></i>{{ _('Send Test Email') }}
+                            </button>
+                        </form>
+                        {% else %}
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-1"></i>{{ _('Set your email address in your profile to receive test emails.') }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var noAuthCheck = document.getElementById('smtpNoAuth');
+    var userGroup = document.getElementById('smtpUserGroup');
+    var passGroup = document.getElementById('smtpPassGroup');
+
+    function toggleAuthFields() {
+        var hide = noAuthCheck.checked;
+        userGroup.style.display = hide ? 'none' : '';
+        passGroup.style.display = hide ? 'none' : '';
+    }
+
+    noAuthCheck.addEventListener('change', toggleAuthFields);
+    toggleAuthFields();
+});
+</script>
+{% endblock %}

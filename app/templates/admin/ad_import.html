@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Import from Active Directory') }}{% endblock %}
+
+{% block extra_head %}
+<style>
+.checkbox-column { width: 40px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-download me-2"></i>{{ _('Import from Active Directory') }}</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-database fa-4x text-primary mb-3"></i>
+                <h5>{{ _('Step 1: Preview') }}</h5>
+                <p class="text-muted">{{ _('Search Active Directory for users using current LDAP settings.') }}</p>
+                <form method="POST" id="previewForm">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="preview" value="1">
+                    <button type="submit" class="btn btn-primary btn-lg w-100" id="previewBtn">
+                        <i class="fas fa-search me-1"></i>{{ _('Preview Users from AD') }}
+                    </button>
+                </form>
+                <a href="{{ url_for('admin.ad_settings') }}" class="btn btn-outline-secondary mt-2 w-100">
+                    <i class="fas fa-cog me-1"></i>{{ _('Configure LDAP Settings') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <h5 class="mb-0"><i class="fas fa-list me-2 text-secondary"></i>{{ _('Preview Results') }}</h5>
+                {% if imported_users %}
+                <button type="button" class="btn btn-success" id="importSelectedBtn" disabled>
+                    <i class="fas fa-download me-1"></i>{{ _('Import Selected (%(count)s)', count=0) }}
+                </button>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% if imported_users %}
+                <form method="POST" id="importForm">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="import_selected" value="1">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle" id="importTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="checkbox-column">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="selectAll">
+                                        </div>
+                                    </th>
+                                    <th>{{ _('Username') }}</th>
+                                    <th>{{ _('Display Name') }}</th>
+                                    <th>{{ _('Email') }}</th>
+                                    <th>{{ _('Department') }}</th>
+                                    <th>{{ _('Status') }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% set existing_users = users|map(attribute='username')|list %}
+                                {% set existing_users_lower = existing_users|map('lower')|list %}
+                                {% for ad_user in imported_users %}
+                                <tr>
+                                    <td class="checkbox-column">
+                                        <div class="form-check">
+                                            <input class="form-check-input user-checkbox" type="checkbox"
+                                                   name="selected_users" value="{{ ad_user.dn }}">
+                                        </div>
+                                    </td>
+                                    <td><strong>{{ ad_user.username }}</strong></td>
+                                    <td>{{ ad_user.display_name }}</td>
+                                    <td>{{ ad_user.email }}</td>
+                                    <td>{{ ad_user.department }}</td>
+                                    <td>
+                                        {% if ad_user.username|lower in existing_users_lower %}
+                                        <span class="badge bg-warning text-dark">{{ _('Existing') }}</span>
+                                        {% else %}
+                                        <span class="badge bg-success">{{ _('New') }}</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                {% else %}
+                <div class="text-center py-5 text-muted">
+                    <i class="fas fa-search fa-3x mb-3"></i>
+                    <p>{{ _('Click "Preview Users from AD" to see users available for import.') }}</p>
+                    <p class="small">{{ _('Make sure LDAP settings are configured correctly.') }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const selectAll = document.getElementById('selectAll');
+    const checkboxes = document.querySelectorAll('.user-checkbox');
+    const importBtn = document.getElementById('importSelectedBtn');
+    const importForm = document.getElementById('importForm');
+    const previewForm = document.getElementById('previewForm');
+    const previewBtn = document.getElementById('previewBtn');
+
+    if (previewForm) {
+        previewForm.addEventListener('submit', function() {
+            showSpinner('{{ _("Searching Active Directory...") }}');
+            previewBtn.disabled = true;
+        });
+    }
+
+    if (selectAll) {
+        selectAll.addEventListener('change', function() {
+            checkboxes.forEach(cb => cb.checked = this.checked);
+            updateImportButton();
+        });
+    }
+
+    if (checkboxes.length > 0) {
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateImportButton);
+        });
+    }
+
+    function updateImportButton() {
+        if (!importBtn || !importForm) return;
+        const checked = document.querySelectorAll('.user-checkbox:checked');
+        const count = checked.length;
+        if (count > 0) {
+            importBtn.disabled = false;
+            importBtn.innerHTML = '<i class="fas fa-download me-1"></i>{{ _("Import Selected") }} (' + count + ')';
+            importBtn.onclick = function() {
+                confirmModal('{{ _("Import selected users?") }}', function() {
+                    showSpinner('{{ _("Importing users...") }}');
+                    importForm.submit();
+                });
+            };
+        } else {
+            importBtn.disabled = true;
+            importBtn.innerHTML = '<i class="fas fa-download me-1"></i>{{ _("Import Selected (%(count)s)", count=0) }}';
+            importBtn.onclick = null;
+        }
+    }
+});
+</script>
+{% endblock %}

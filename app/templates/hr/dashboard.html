@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}{{ _('HR Dashboard') }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-briefcase me-2"></i>{{ _('HR Dashboard') }}</h2>
+    </div>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-info text-white h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-users fa-3x mb-3"></i>
+                <h3 class="fw-bold">{{ stats.total_users }}</h3>
+                <p class="mb-0">{{ _('Active Employees') }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-warning text-dark h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-clock fa-3x mb-3"></i>
+                <h3 class="fw-bold">{{ stats.pending_all }}</h3>
+                <p class="mb-0">{{ _('Pending Requests') }}</p>
+                <small>{{ _('awaiting approval') }}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-success text-white h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-check-circle fa-3x mb-3"></i>
+                <h3 class="fw-bold">{{ stats.approved_this_month }}</h3>
+                <p class="mb-0">{{ _('Approved This Month') }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0"><i class="fas fa-clock me-2 text-warning"></i>{{ _('Recent Requests') }}</h5>
+            </div>
+            <div class="card-body">
+                {% if recent_requests %}
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>{{ _('Employee') }}</th>
+                                <th>{{ _('Dates') }}</th>
+                                <th>{{ _('Days') }}</th>
+                                <th>{{ _('Status') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for req in recent_requests %}
+                            <tr>
+                                <td>{{ req.user.display_name or req.user.username }}</td>
+                                <td><small>{{ req.start_date.strftime('%d/%m') }}-{{ req.end_date.strftime('%d/%m') }}</small></td>
+                                <td>{{ req.days_count }}</td>
+                                <td>
+                                    {% if req.status == 'approved' %}<span class="badge bg-success">{{ _('Approved') }}</span>
+                                    {% elif req.status == 'pending' %}<span class="badge bg-warning text-dark">{{ _('Pending') }}</span>
+                                    {% elif req.status == 'hr_assigned' %}<span class="badge bg-info">{{ _('HR') }}</span>
+                                    {% elif req.status == 'rejected' %}<span class="badge bg-danger">{{ _('Rejected') }}</span>{% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="text-center py-4 text-muted">
+                    <i class="fas fa-inbox fa-3x mb-3"></i>
+                    <p>{{ _('No requests yet.') }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-header bg-white border-0 pt-3">
+                <h5 class="mb-0"><i class="fas fa-bolt me-2 text-primary"></i>{{ _('Quick Actions') }}</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('hr.users') }}" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+                        <i class="fas fa-user-cog fa-fw me-3 text-info"></i>
+                        <div><strong>{{ _('Set Vacation Days') }}</strong><br><small class="text-muted">{{ _('Configure annual vacation days per employee') }}</small></div>
+                    </a>
+                    <a href="{{ url_for('hr.assign_vacation') }}" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+                        <i class="fas fa-calendar-plus fa-fw me-3 text-success"></i>
+                        <div><strong>{{ _('Assign Vacation') }}</strong><br><small class="text-muted">{{ _('Assign vacation days with a cause') }}</small></div>
+                    </a>
+                    <a href="{{ url_for('hr.all_vacations') }}" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+                        <i class="fas fa-list fa-fw me-3 text-primary"></i>
+                        <div><strong>{{ _('All Vacations') }}</strong><br><small class="text-muted">{{ _('View all company vacation requests') }}</small></div>
+                    </a>
+                    <a href="{{ url_for('manager.export') }}" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+                        <i class="fas fa-file-excel fa-fw me-3 text-success"></i>
+                        <div><strong>{{ _('Export to Excel') }}</strong><br><small class="text-muted">{{ _('Export all approved vacations') }}</small></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

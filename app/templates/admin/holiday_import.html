@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Import Holidays') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="mb-0"><i class="fas fa-file-csv me-2 text-primary"></i>{{ _('Import Holidays from CSV') }}</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-4">
+                        <label class="form-label">{{ _('CSV File') }}</label>
+                        {{ form.csv_file(class="form-control" + (" is-invalid" if form.csv_file.errors else ""), accept=".csv") }}
+                        {% for error in form.csv_file.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-muted mb-2"><strong>{{ _('CSV Format:') }}</strong></p>
+                        <pre class="bg-light p-3 rounded-3 small">date,name,name_el
+01/01/2025,New Year's Day,Πρωτοχρονιά
+06/01/2025,Epiphany,Θεοφάνεια</pre>
+                        <p class="text-muted small mb-0">{{ _('The first line must be the header and will be skipped. The name_el column is optional.') }}</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        {{ form.submit(class="btn btn-primary") }}
+                        <a href="{{ url_for('admin.holidays') }}" class="btn btn-outline-secondary">{{ _('Back') }}</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}{{ _('Assign Vacation') }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-header bg-white border-0 pt-3">
+                <h4 class="mb-0"><i class="fas fa-calendar-plus me-2 text-primary"></i>{{ _('Assign Vacation to Employee') }}</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Employee') }}</label>
+                            {{ form.user_id(class="form-select" + (" is-invalid" if form.user_id.errors else "")) }}
+                            {% for error in form.user_id.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+                        </div>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('Start Date') }}</label>
+                            {{ form.start_date(class="form-control datepicker" + (" is-invalid" if form.start_date.errors else "")) }}
+                        </div>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label class="form-label">{{ _('End Date') }}</label>
+                            {{ form.end_date(class="form-control datepicker" + (" is-invalid" if form.end_date.errors else "")) }}
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">{{ _('Cause') }}</label>
+                            {{ form.cause_id(class="form-select" + (" is-invalid" if form.cause_id.errors else "")) }}
+                            {% for error in form.cause_id.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label class="form-label">{{ _('Additional Notes') }}</label>
+                            {{ form.reason(class="form-control", rows=2) }}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="alert alert-warning mb-0">
+                                <i class="fas fa-info-circle me-2"></i>
+                                {{ _('This vacation will be auto-approved and count toward the employee\'s annual balance.') }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex gap-2">
+                            {{ form.submit(class="btn btn-primary btn-lg") }}
+                            <a href="{{ url_for('hr.dashboard') }}" class="btn btn-outline-secondary">{{ _('Cancel') }}</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+flatpickr('.datepicker', {
+    dateFormat: 'Y-m-d',
+    locale: '{{ current_user.locale or "en" }}',
+    disable: [
+        function(date) {
+            return date.getDay() === 0 || date.getDay() === 6;
+        },
+        {% for d in holiday_dates %}
+        {{ d|tojson }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+});
+</script>
+{% endblock %}

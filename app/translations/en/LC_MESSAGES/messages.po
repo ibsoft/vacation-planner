@@ -1,0 +1,1848 @@
+# English translations
+# Copyright (C) 2025
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Vacation Planner 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-03 08:32+0300\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language: en\n"
+"Language-Team: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/__init__.py:35
+msgid "You have no subordinates to manage."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:68
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:69
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:106
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:107
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:168
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:191
+msgid "None"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:72
+msgid "Username already exists."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:73
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:94
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:10
+msgid "New User"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:92
+msgid "User created successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:103
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:137
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:471
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:48
+msgid "User not found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:124
+msgid "User updated successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:128
+msgid "Edit User"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:140
+msgid "You cannot disable yourself."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:145
+#, python-format
+msgid "User %(name)s %(status)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:145
+msgid "activated"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:145
+msgid "deactivated"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:177
+msgid "Department created successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:179
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:10
+msgid "New Department"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:188
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:452
+msgid "Department not found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:198
+msgid "Department updated successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:201
+msgid "Edit Department"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:220
+msgid "LDAP settings saved successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:266
+msgid "Email settings saved successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:297
+msgid "Test Email from Vacation Planner"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:298
+msgid "This is a test email to verify SMTP configuration."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:300
+#, python-format
+msgid "Test email sent to %(email)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:302
+#, python-format
+msgid "Failed to send test email: %(error)s"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:314
+msgid "LDAP connection successful!"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:316
+msgid "LDAP connection failed."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:318
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:334
+#, python-format
+msgid "LDAP connection error: %(error)s"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:332
+msgid "No users found in Active Directory. Check your LDAP settings."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:339
+msgid "No users selected. Please check the users you want to import."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:370
+#, python-format
+msgid "Import complete: %(new)s new users added, %(up)s updated."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:406
+msgid "Vacation cause created successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:408
+msgid "New Vacation Cause"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:417
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:437
+msgid "Cause not found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:426
+msgid "Vacation cause updated successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:428
+msgid "Edit Vacation Cause"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:442
+msgid "Vacation cause deleted successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:456
+msgid "Cannot delete department with active members."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:461
+msgid "Department deleted successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:474
+msgid "You cannot delete yourself."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:479
+msgid "User deleted successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:503
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:565
+msgid "A holiday on this date already exists."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:504
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:515
+msgid "New Holiday"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:513
+msgid "Holiday added successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:548
+#, python-format
+msgid "Imported %(imported)s holidays, %(skipped)s skipped."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:559
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:583
+msgid "Holiday not found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:566
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:574
+msgid "Edit Holiday"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:572
+msgid "Holiday updated successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/admin.py:588
+msgid "Holiday deleted successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:43
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:8
+#, python-format
+msgid "Welcome back, %(name)s!"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:50
+msgid "Your account is disabled. Contact your administrator."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:52
+msgid "Invalid username or password."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:62
+msgid "You have been logged out."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/auth.py:97
+msgid "Profile updated successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:55
+#, python-format
+msgid "Vacation days updated for %(name)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:73
+msgid "Invalid selection."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:77
+msgid "Selected range has no working days."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:80
+msgid "User does not have enough remaining vacation days."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/hr.py:99
+#, python-format
+msgid "Vacation assigned to %(name)s successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:68
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:101
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:122
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:141
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:202
+msgid "Request not found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:72
+msgid "You are not authorized to approve this request."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:75
+msgid "This request has already been processed."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:90
+#, python-format
+msgid "Request %(action)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:105
+msgid "You are not authorized to respond to this change request."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:108
+msgid "This change request has already been processed."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:112
+msgid "Invalid action."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:129
+msgid "Change Request Approved"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:130
+#, python-format
+msgid ""
+"Your request to change your vacation from %(orig_start)s to %(orig_end)s "
+"has been approved."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:136
+msgid "Change request approved and vacation dates updated."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:146
+msgid "Change Request Rejected"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:147
+msgid "Your request to change your vacation dates has been rejected."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:151
+msgid "Change request rejected."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/manager.py:170
+msgid "No approved vacations to export."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:53
+msgid "Other (write custom)"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:56
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:226
+msgid "Please fix the errors below."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:59
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:152
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:230
+msgid "End date must be after start date."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:63
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:156
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:235
+msgid "Selected range has no working days (weekends/holidays)."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:159
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:240
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:244
+msgid "Insufficient vacation days remaining."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:75
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:169
+msgid "You already have a vacation request overlapping these dates."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:79
+msgid "Please provide a custom reason."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:100
+msgid "Vacation request submitted for approval."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:125
+msgid "Only pending requests can be cancelled."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:132
+msgid "Vacation request cancelled."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:144
+msgid "Only pending or approved vacations can be changed."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:147
+msgid "HR-assigned vacations cannot be changed."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:182
+msgid "Vacation Change Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:183
+#, python-format
+msgid ""
+"%(name)s requested a change to their vacation from %(orig_start)s to "
+"%(orig_end)s: new dates %(new_start)s to %(new_end)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:192
+msgid "Change request submitted for approval."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:219
+msgid "You are not allowed to edit this request."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:255
+msgid "This period overlaps with an existing vacation request."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:278
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:292
+msgid "Vacation Dates Edited"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:279
+#, python-format
+msgid ""
+"%(name)s edited their vacation request #%(req_id)s from "
+"%(old_start)s–%(old_end)s to %(new_start)s–%(new_end)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:293
+#, python-format
+msgid ""
+"Your vacation request #%(req_id)s has been edited by %(editor)s from "
+"%(old_start)s–%(old_end)s to %(new_start)s–%(new_end)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/routes/vacation.py:304
+msgid "Vacation dates updated successfully."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:51
+msgid "Vacation Plan"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:54
+msgid "Vacation Plan Report"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:60
+#, python-format
+msgid "Generated on: %(date)s"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:43
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:54
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:15
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:25
+msgid "Employee"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:36
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:44
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:20
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:112
+msgid "Department"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:48
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:30
+msgid "Start Date"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:37
+msgid "End Date"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:46
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:56
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:60
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:49
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:114
+msgid "Days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:47
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:60
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:51
+msgid "Type"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:63
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:48
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:57
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:59
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:35
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:50
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:115
+msgid "Status"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:66
+msgid "Cause/Reason"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:82
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:73
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:53
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:79
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:84
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:29
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:76
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:106
+msgid "HR Assigned"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:82
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:47
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:86
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:83
+msgid "User Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:93
+msgid "TOTAL"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/export_service.py:110
+msgid "AVERAGE"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:82
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:5
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:18
+msgid "New Vacation Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:83
+#, python-format
+msgid "%(name)s submitted a vacation request from %(start)s to %(end)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:93
+#, python-format
+msgid ""
+"%(name)s submitted a vacation request from %(start)s to %(end)s.\n"
+"\n"
+"Review at: %(url)s"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:104
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:5
+msgid "Vacation Approved"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:105
+#, python-format
+msgid "Your vacation request from %(start)s to %(end)s has been approved."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:113
+#, python-format
+msgid "Your vacation from %(start)s to %(end)s has been approved."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:121
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:5
+msgid "Vacation Rejected"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:122
+#, python-format
+msgid "Your vacation request from %(start)s to %(end)s has been rejected."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:130
+#, python-format
+msgid "Your vacation from %(start)s to %(end)s has been rejected."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:132
+msgid "Comment"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:141
+msgid "Vacation Cancelled"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:142
+#, python-format
+msgid "%(name)s cancelled their vacation request from %(start)s to %(end)s."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:156
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:5
+msgid "Vacation Assigned"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:157
+#: /home/ioannisb/Desktop/vacation-planner/app/services/notification_service.py:165
+#, python-format
+msgid "A vacation from %(start)s to %(end)s has been assigned to you."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:20
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:178
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:2
+msgid "Vacation Planner"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:29
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:7
+msgid "Dashboard"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:34
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:8
+msgid "My Vacations"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:39
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:10
+msgid "New Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:44
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:16
+msgid "Team Calendar"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:50
+msgid "Management"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:53
+msgid "Approvals"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:54
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:3
+msgid "Team View"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:107
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:10
+msgid "Export to Excel"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:45
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:154
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:69
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:32
+msgid "HR"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:65
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:7
+msgid "HR Dashboard"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:95
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:8
+msgid "Set Vacation Days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:99
+msgid "Assign Vacation"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:68
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:103
+msgid "All Vacations"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:43
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:152
+msgid "Admin"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:7
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:78
+msgid "Admin Dashboard"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:79
+msgid "Users"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:80
+msgid "Departments"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:82
+msgid "AD Settings"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:83
+msgid "AD Import"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:85
+msgid "Vacation Causes"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:79
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:86
+msgid "Greek Holidays"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:8
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:88
+msgid "Audit Log"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:89
+msgid "Logs"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:7
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:90
+msgid "Email Settings"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:105
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:134
+msgid "No notifications"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:106
+msgid "Notifications"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:132
+msgid "See all"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:159
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:23
+msgid "Remaining"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:162
+msgid "Profile"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:163
+msgid "Logout"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:187
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:195
+msgid "Confirm"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:191
+msgid "Are you sure?"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:34
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:66
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:33
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:77
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:194
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:51
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:34
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:58
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:105
+msgid "Cancel"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:205
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/base.html:207
+msgid "Loading..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:13
+msgid "Import from Active Directory"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:22
+msgid "Step 1: Preview"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:23
+msgid "Search Active Directory for users using current LDAP settings."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:27
+msgid "Preview Users from AD"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:31
+msgid "Configure LDAP Settings"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:39
+msgid "Preview Results"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:42
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:152
+#, python-format
+msgid "Import Selected (%(count)s)"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:59
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:17
+msgid "Username"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:60
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:22
+msgid "Display Name"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:61
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:23
+msgid "Email"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:83
+msgid "Existing"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:85
+msgid "New"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:97
+msgid "Click \"Preview Users from AD\" to see users available for import."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:98
+msgid "Make sure LDAP settings are configured correctly."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:119
+msgid "Searching Active Directory..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:143
+msgid "Import Selected"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:145
+msgid "Import selected users?"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_import.html:146
+msgid "Importing users..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:9
+msgid "Active Directory Settings"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:16
+msgid "LDAP Server"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:20
+msgid "Base DN"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:26
+msgid "Bind DN"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:30
+msgid "Bind Password"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:35
+msgid "Attribute Mapping"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:38
+msgid "Username Attribute"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:42
+msgid "Email Attribute"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:46
+msgid "Display Name Attribute"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:52
+msgid "Department Attribute"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:56
+msgid "Manager Attribute"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:60
+msgid "User Filter"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/ad_settings.html:75
+msgid "Test Connection"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:18
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:48
+msgid "Timestamp"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:19
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:51
+msgid "User"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:20
+msgid "Action"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:21
+msgid "Details"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:22
+msgid "IP Address"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/audit_log.html:36
+msgid "No audit log entries."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:21
+msgid "Name (English)"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:27
+msgid "Name (Greek)"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/cause_form.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:35
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:70
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:56
+msgid "Active"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:10
+msgid "New Cause"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:26
+msgid "Name"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:29
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:49
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:62
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:61
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:54
+msgid "Actions"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:37
+msgid "Inactive"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:45
+msgid "Delete this cause?"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:59
+msgid "No vacation causes defined yet."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/causes.html:60
+msgid ""
+"Causes are used by HR when assigning vacation days (e.g. \"Company "
+"Shutdown\", \"Mandatory Leave\")."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:17
+msgid "Total Users"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:18
+msgid "active"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:36
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:26
+msgid "Pending Requests"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:37
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:27
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:39
+msgid "awaiting approval"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:46
+msgid "Holidays"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:47
+msgid "vacation causes"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:57
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:89
+msgid "Quick Actions"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:63
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:3
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:8
+msgid "Manage Users"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:63
+msgid "Add, edit, or deactivate users"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:67
+msgid "Manage Departments"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:67
+msgid "Create and manage departments"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:71
+msgid "Import from AD"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:71
+msgid "Import users from Active Directory"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:75
+msgid "Manage dynamic vacation causes"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:79
+msgid "Add or manage holidays"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:88
+msgid "Monthly Overview"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:93
+msgid "Approved this month"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:94
+msgid "Active users"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/dashboard.html:96
+msgid "Export All to Excel"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/department_form.html:25
+msgid "Department Manager"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:40
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:49
+msgid "Manager"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:25
+msgid "Members"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:41
+msgid "Delete this department?"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/departments.html:55
+msgid "No departments yet."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:37
+msgid "Leave empty to keep current password."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:60
+msgid "Language used for email notifications."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:75
+msgid "Send Test Email"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/email_settings.html:80
+msgid "Set your email address in your profile to receive test emails."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_form.html:16
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:25
+msgid "Date"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:2
+msgid "Import Holidays"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:9
+msgid "Import Holidays from CSV"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:15
+msgid "CSV File"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:20
+msgid "CSV Format:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:24
+msgid ""
+"The first line must be the header and will be skipped. The name_el column"
+" is optional."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holiday_import.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:127
+msgid "Back"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:10
+msgid "Add Holiday"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:13
+msgid "Import CSV"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:42
+msgid "Delete this holiday?"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:56
+msgid "No holidays added yet."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/holidays.html:57
+msgid ""
+"Add Greek holidays so the system can exclude them when calculating "
+"vacation days."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:7
+msgid "Application Logs"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:15
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:49
+msgid "Level"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:17
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:20
+msgid "All"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:24
+msgid "Search"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:25
+msgid "message, module, logger..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:28
+msgid "Per page"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:36
+msgid "Filter"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:50
+msgid "Message"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:51
+msgid "Module"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:71
+msgid "No log entries found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/logs.html:115
+#, python-format
+msgid "Page %(page)s of %(total)s (%(count)s entries)"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:27
+msgid "Password"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:32
+msgid "leave blank to keep current"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:46
+msgid "Vacation Days/Year"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:50
+msgid "Language"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/user_form.html:66
+msgid "Top Management"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:26
+msgid "Vacation Days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:27
+msgid "Role"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:47
+msgid "Top Mgmt"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:58
+msgid "Disabled"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/admin/users.html:67
+msgid "Disable this user?"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:2
+msgid "Login"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:12
+msgid "Sign in to your account"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:20
+msgid "Enter username"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/login.html:30
+msgid "Enter password"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/profile.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/profile.html:9
+msgid "My Profile"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/auth/profile.html:18
+msgid "Upload a photo or use Gravatar (auto-detected from your email)"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:6
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:6
+#, python-format
+msgid "Hello %(name)s,"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:7
+msgid "Your vacation request has been approved."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:9
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:9
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:9
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:9
+msgid "From:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:10
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:10
+msgid "To:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:11
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:11
+msgid "Days:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/approved.html:12
+msgid "Approved by:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:7
+msgid "A vacation has been assigned to you by HR."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/assigned.html:12
+msgid "Assigned by:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:7
+#, python-format
+msgid "%(name)s has submitted a new vacation request:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:12
+msgid "Reason:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:12
+msgid "N/A"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/new_request.html:14
+msgid "Review Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:7
+msgid "Your vacation request has been rejected."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/emails/rejected.html:13
+msgid "Comment:"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:20
+msgid "All Statuses"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:72
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:68
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:52
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:38
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:77
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:163
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:39
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:70
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:105
+msgid "Pending"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:71
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:67
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:51
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:21
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:28
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:161
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:37
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:26
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:68
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:104
+msgid "Approved"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:24
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:74
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:70
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:54
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:32
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:72
+msgid "Rejected"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:25
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:75
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:74
+msgid "Cancelled"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:30
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:19
+msgid "All Departments"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:45
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:59
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:23
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:48
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:113
+msgid "Period"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:80
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:99
+msgid "Edit"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:93
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:120
+msgid "No vacation requests found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:9
+msgid "Assign Vacation to Employee"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:29
+msgid "Cause"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:36
+msgid "Additional Notes"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/assign_vacation.html:44
+msgid ""
+"This vacation will be auto-approved and count toward the employee's "
+"annual balance."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:17
+msgid "Active Employees"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:36
+msgid "Approved This Month"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:46
+msgid "Recent Requests"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:55
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:15
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:57
+msgid "Dates"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:80
+msgid "No requests yet."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:95
+msgid "Configure annual vacation days per employee"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:99
+msgid "Assign vacation days with a cause"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:103
+msgid "View all company vacation requests"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/dashboard.html:107
+msgid "Export all approved vacations"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:11
+#, python-format
+msgid "Set Vacation Days for %(name)s"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:17
+msgid "Current balance"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:18
+msgid "days remaining"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/set_vacation_days.html:24
+msgid "Vacation Days Per Year"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:9
+msgid "Configure annual vacation entitlement for each employee."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:21
+msgid "Current Days/Year"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:22
+msgid "Used"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:47
+msgid "Set Days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:53
+msgid "No active users found."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:9
+msgid "Review Vacation Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:33
+msgid "Working Days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:37
+msgid "Remaining Balance"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:44
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:61
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:52
+msgid "Reason"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:53
+msgid "Change Request Pending"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:56
+msgid "Original Dates"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:62
+msgid "Requested New Dates"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:71
+msgid "Reason for Change"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:81
+msgid "Approve Change"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:87
+msgid "Reject Change"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:98
+msgid "Decision"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:120
+msgid "Comment (optional)"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:121
+msgid "Add a comment for the employee..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:7
+msgid "Management Dashboard"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:22
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:50
+msgid "Pending Approvals"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:31
+msgid "Team Members"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:40
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:102
+msgid "Change Requests"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:81
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:112
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:60
+msgid "Review"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:92
+msgid "No pending approvals!"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:93
+msgid "All vacation requests have been processed."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:126
+msgid "No change requests pending."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:133
+msgid "My Team"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/dashboard.html:148
+msgid "No team members assigned."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:8
+msgid "Team Vacation Overview"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/team.html:73
+msgid "No vacation requests found for your team."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:9
+msgid "Request Vacation Date Change"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:13
+msgid "Original Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/change_request.html:49
+msgid "Explain why you need to change the dates..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:18
+msgid "Remaining Days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:19
+msgid "of"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:19
+msgid "per year"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:29
+msgid "upcoming vacations"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:49
+msgid "Upcoming Vacations"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:92
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:104
+msgid "Cancel this request?"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:106
+msgid "No upcoming vacations."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:108
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:122
+msgid "Request Vacation"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:119
+msgid "Recent History"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:137
+msgid "days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:141
+msgid "No history yet"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:151
+msgid "Team Vacations"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/dashboard.html:173
+msgid "View All"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:2
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:18
+msgid "Edit Vacation Dates"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:23
+msgid "Current Request"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:28
+msgid "Current Dates"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:44
+msgid "Saving changes..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/edit_request.html:67
+msgid "I confirm the updated dates are correct."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:53
+msgid "Approved By"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:90
+msgid "Change Pending"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:94
+msgid "Request Change"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:24
+msgid "Remaining vacation days"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:26
+msgid "Submitting request..."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:46
+msgid "Vacation Cause"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:55
+msgid "Custom Reason"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:56
+msgid "Describe your reason"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/new_request.html:67
+msgid "I confirm that my manager has been informed of this request."
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:28
+msgid "Holiday"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:29
+msgid "Export PDF"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:30
+msgid "PDF"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:48
+msgid "Vacation Details"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:53
+msgid "Close"
+msgstr ""
+
+#: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:77
+msgid "Year"
+msgstr ""
+

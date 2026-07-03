@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% from "macros/pagination.html" import render_pagination %}
+{% block title %}{{ _('Manage Users') }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12 d-flex justify-content-between align-items-center flex-wrap">
+        <h2><i class="fas fa-users-cog me-2"></i>{{ _('Manage Users') }}</h2>
+        <a href="{{ url_for('admin.user_new') }}" class="btn btn-primary">
+            <i class="fas fa-plus me-1"></i>{{ _('New User') }}
+        </a>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>{{ _('Username') }}</th>
+                        <th>{{ _('Display Name') }}</th>
+                        <th>{{ _('Email') }}</th>
+                        <th>{{ _('Department') }}</th>
+                        <th>{{ _('Manager') }}</th>
+                        <th>{{ _('Vacation Days') }}</th>
+                        <th>{{ _('Role') }}</th>
+                        <th>{{ _('Status') }}</th>
+                        <th>{{ _('Actions') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users.items %}
+                    <tr>
+                        <td><strong>{{ user.username }}</strong></td>
+                        <td>{{ user.display_name or '-' }}</td>
+                        <td>{{ user.email or '-' }}</td>
+                        <td>{{ user.department.name if user.department else '-' }}</td>
+                        <td>{{ user.manager.display_name or user.manager.username if user.manager else '-' }}</td>
+                        <td><span class="badge bg-secondary">{{ user.vacation_days_per_year }}</span></td>
+                        <td>
+                            {% if user.is_admin %}
+                            <span class="badge bg-danger">{{ _('Admin') }}</span>
+                            {% elif user.is_hr %}
+                            <span class="badge bg-info">{{ _('HR') }}</span>
+                            {% elif user.is_top_management %}
+                            <span class="badge bg-dark">{{ _('Top Mgmt') }}</span>
+                            {% elif user.is_manager %}
+                            <span class="badge bg-warning text-dark">{{ _('Manager') }}</span>
+                            {% else %}
+                            <span class="badge bg-light text-dark">{{ _('User') }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if user.is_active %}
+                            <span class="badge bg-success">{{ _('Active') }}</span>
+                            {% else %}
+                            <span class="badge bg-danger">{{ _('Disabled') }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('admin.user_edit', user_id=user.id) }}" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form method="POST" action="{{ url_for('admin.user_toggle_active', user_id=user.id) }}" class="d-inline">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                {% if user.is_active %}
+                                <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="{{ _('Disable this user?') }}">
+                                    <i class="fas fa-ban"></i>
+                                </button>
+                                {% else %}
+                                <button type="submit" class="btn btn-sm btn-outline-success">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                {% endif %}
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {{ render_pagination(users, 'admin.users') }}
+    </div>
+</div>
+{% endblock %}
