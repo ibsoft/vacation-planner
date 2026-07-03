@@ -9,7 +9,7 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///' + os.path.join(basedir, 'instance', 'vacations.db'))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_LOCALE = 'el'
     BABEL_DEFAULT_TIMEZONE = 'Europe/Athens'
     LANGUAGES = {'en': 'English', 'el': 'Ελληνικά'}
 

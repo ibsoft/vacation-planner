@@ -74,10 +74,13 @@ def calendar_events():
         })
 
     holidays = GreekHoliday.query.all()
+    user_locale = getattr(current_user, 'locale', None) or 'en'
     for h in holidays:
+        # Use Greek name when user locale is 'el' and a Greek name exists
+        title = h.name_el if (user_locale.startswith('el') and h.name_el) else h.name
         events.append({
             'id': f'holiday-{h.id}',
-            'title': h.name,
+            'title': title,
             'start': h.date.isoformat(),
             'end': h.date.isoformat(),
             'color': '#dc3545',
