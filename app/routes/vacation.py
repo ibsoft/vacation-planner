@@ -148,9 +148,11 @@ def delete_request(req_id):
     if not (current_user.is_hr or current_user.is_admin):
         flash(_('You are not authorized to delete this request.'), 'danger')
         return redirect(url_for('vacation.my_vacations'))
+    username = req.user.username if req.user else 'unknown'
+    req_id_value = req.id
     db.session.delete(req)
     db.session.commit()
-    log_audit('delete_vacation_request', f'Deleted vacation request #{req.id} for user {req.user.username}')
+    log_audit('delete_vacation_request', f'Deleted vacation request #{req_id_value} for user {username}')
     flash(_('Vacation request deleted.'), 'success')
     return redirect(url_for('hr.all_vacations'))
 
