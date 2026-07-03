@@ -59,6 +59,8 @@
 
 {% block extra_scripts %}
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+<!-- Load all locales so FullCalendar can render buttons (Today/Week/Month) in the selected locale -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/locales-all.global.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.3/html2pdf.bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {

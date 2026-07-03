@@ -490,7 +490,7 @@ msgstr "Υπάλληλος"
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/users.html:20
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/manager/approve.html:19
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/team_calendar.html:112
-#, fuzzy
+
 msgid "Department"
 msgstr "Τμήμα"
 
@@ -1563,7 +1563,7 @@ msgstr "Περίοδος"
 
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/hr/all_vacations.html:80
 #: /home/ioannisb/Desktop/vacation-planner/app/templates/vacation/my_vacations.html:99
-#, fuzzy
+
 msgid "Edit"
 msgstr "Επεξεργασία"
 
