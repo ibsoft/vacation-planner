@@ -15,18 +15,8 @@ depends_on = None
 
 
 def upgrade():
-    with op.batch_alter_table('users', schema=None) as batch_op:
-        batch_op.add_column(sa.Column('phone', sa.String(length=50), nullable=True))
-        batch_op.add_column(sa.Column('mobile', sa.String(length=50), nullable=True))
-        batch_op.add_column(sa.Column('internal_phone', sa.String(length=50), nullable=True))
-        batch_op.add_column(sa.Column('avatar_url', sa.String(length=500), nullable=True))
-        batch_op.add_column(sa.Column('is_top_management', sa.Boolean(), nullable=False, server_default='0'))
+    pass
 
 
 def downgrade():
-    with op.batch_alter_table('users', schema=None) as batch_op:
-        batch_op.drop_column('is_top_management')
-        batch_op.drop_column('avatar_url')
-        batch_op.drop_column('internal_phone')
-        batch_op.drop_column('mobile')
-        batch_op.drop_column('phone')
+    pass
