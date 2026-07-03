@@ -85,6 +85,8 @@ def profile():
         current_user.mobile = form.mobile.data or None
         current_user.internal_phone = form.internal_phone.data or None
         current_user.locale = form.locale.data
+        # email_locale empty string means use system default
+        current_user.email_locale = form.email_locale.data or None
         if form.avatar.data:
             allowed_mimes = {'image/jpeg', 'image/png', 'image/gif', 'image/webp'}
             mime = form.avatar.data.content_type

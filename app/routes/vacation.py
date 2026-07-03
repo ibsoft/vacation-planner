@@ -1,7 +1,7 @@
 from datetime import timedelta
 from flask import Blueprint, render_template, redirect, url_for, flash, request
 from flask_login import login_required, current_user
-from flask_babel import gettext as _
+from flask_babel import gettext as _, get_locale
 from app.extensions import db
 from app.models.user import User
 from app.models.vacation import VacationRequest, VacationCause
@@ -49,7 +49,12 @@ def dashboard():
 def new_request():
     form = VacationRequestForm()
     causes = VacationCause.query.filter_by(is_active=True).order_by(VacationCause.name).all()
-    form.cause_id.choices = [(c.id, c.name) for c in causes] + [(-1, _('Other (write custom)'))]
+    locale = str(get_locale() or '')
+    def _label(c):
+        if locale.startswith('el') and c.name_el:
+            return c.name_el
+        return c.name
+    form.cause_id.choices = [(c.id, _label(c)) for c in causes] + [(-1, _('Other (write custom)'))]
     holiday_dates = [h.date.isoformat() for h in GreekHoliday.query.with_entities(GreekHoliday.date).all()]
     if form.is_submitted() and not form.validate():
         flash(_('Please fix the errors below.'), 'danger')
@@ -80,7 +85,8 @@ def new_request():
             reason_text = form.custom_reason.data.strip()
             cause_id = None
         else:
-            reason_text = VacationCause.query.get(form.cause_id.data).name
+            cause = VacationCause.query.get(form.cause_id.data)
+            reason_text = (cause.name_el if locale.startswith('el') and getattr(cause, 'name_el', None) else cause.name)
             cause_id = form.cause_id.data
         req = VacationRequest(
             user_id=current_user.id,

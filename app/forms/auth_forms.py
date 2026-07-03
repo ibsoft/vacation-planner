@@ -18,5 +18,6 @@ class ProfileForm(FlaskForm):
     mobile = StringField(_l('Mobile'), validators=[Optional()])
     internal_phone = StringField(_l('Internal Phone'), validators=[Optional()])
     locale = SelectField(_l('Language'), choices=[('en', 'English'), ('el', 'Ελληνικά')], default='en')
+    email_locale = SelectField(_l('Email Language'), choices=[('', _l('Use system default')), ('en', 'English'), ('el', 'Ελληνικά')], default='')
     avatar = FileField(_l('Avatar'), validators=[Optional(), FileAllowed(['jpg', 'jpeg', 'png', 'gif', 'webp'], _l('Images only!'))])
     submit = SubmitField(_l('Save Profile'))

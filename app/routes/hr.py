@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request, send_file
 from flask_login import login_required, current_user
-from flask_babel import gettext as _
+from flask_babel import gettext as _, get_locale
 from app.extensions import db
 from app.models.user import User
 from app.models.vacation import VacationRequest, VacationCause, VacationAssignment
@@ -84,7 +84,13 @@ def assign_vacation():
     form = AssignVacationForm()
     holiday_dates = [h.date.isoformat() for h in GreekHoliday.query.with_entities(GreekHoliday.date).all()]
     form.user_id.choices = [(u.id, f'{u.display_name or u.username}') for u in User.query.filter_by(is_active=True).order_by(User.username).all()]
-    form.cause_id.choices = [(c.id, c.name) for c in VacationCause.query.filter_by(is_active=True).all()]
+    causes = VacationCause.query.filter_by(is_active=True).all()
+    locale = str(get_locale() or '')
+    def _label(c):
+        if locale.startswith('el') and c.name_el:
+            return c.name_el
+        return c.name
+    form.cause_id.choices = [(c.id, _label(c)) for c in causes]
     if form.validate_on_submit():
         user = db.session.get(User, form.user_id.data)
         cause = db.session.get(VacationCause, form.cause_id.data)
@@ -103,7 +109,7 @@ def assign_vacation():
             start_date=form.start_date.data,
             end_date=form.end_date.data,
             days_count=days_count,
-            reason=form.reason.data or cause.name,
+            reason=form.reason.data or (cause.name_el if locale.startswith('el') and getattr(cause, 'name_el', None) else cause.name),
             status='approved',
             request_type='hr_assigned',
             cause_id=cause.id,
@@ -112,7 +118,7 @@ def assign_vacation():
         )
         db.session.add(req)
         db.session.commit()
-        log_audit('hr_assign_vacation', f'HR assigned vacation to {user.username}: {form.start_date.data} to {form.end_date.data}, cause: {cause.name}')
+        log_audit('hr_assign_vacation', f'HR assigned vacation to {user.username}: {form.start_date.data} to {form.end_date.data}, cause: {(cause.name_el if locale.startswith("el") and getattr(cause, "name_el", None) else cause.name)}')
         from app.services.notification_service import notify_hr_assigned
         notify_hr_assigned(req, current_user)
         flash(_('Vacation assigned to %(name)s successfully.', name=user.display_name or user.username), 'success')

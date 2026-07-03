@@ -1,5 +1,6 @@
 import logging
 from logging.config import fileConfig
+import os
 
 from flask import current_app
 
@@ -26,6 +27,10 @@ def get_engine():
 
 def get_engine_url():
     try:
+        # Allow overriding via DATABASE_URL for postgres compatibility
+        env_url = os.getenv('DATABASE_URL')
+        if env_url:
+            return env_url.replace('%', '%%')
         return get_engine().url.render_as_string(hide_password=False).replace(
             '%', '%%')
     except AttributeError:
