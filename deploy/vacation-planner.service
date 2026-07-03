@@ -11,17 +11,13 @@ WorkingDirectory=/opt/vacation-planner
 EnvironmentFile=/opt/vacation-planner/.env
 ExecStart=/opt/vacation-planner/.venv/bin/gunicorn \
     --workers 4 \
-    --bind unix:/run/vacation-planner/vacation-planner.sock \
-    --umask 007 \
+    --bind 127.0.0.1:9876 \
     --log-file /opt/vacation-planner/logs/gunicorn.log \
     --access-logfile /opt/vacation-planner/logs/gunicorn-access.log \
     --error-logfile /opt/vacation-planner/logs/gunicorn-error.log \
     --capture-output \
     --forwarded-allow-ips="*" \
     wsgi:app
-
-RuntimeDirectory=vacation-planner
-RuntimeDirectoryMode=0755
 
 Restart=on-failure
 RestartSec=10
